@@ -5,7 +5,8 @@
   |============================
 */
 @import url('./reset.css');
-@import url('./vite-promo.css');
+@import url('./base-ui.css');
+
 @import url('./header.css');
 
 :root {

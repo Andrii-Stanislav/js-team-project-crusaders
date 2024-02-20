@@ -1,0 +1,47 @@
+.container {
+  max-width: 375px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.button-primary {
+  /*  */
+}
+
+.button-secondary {
+  /*  */
+}
+
+.icon-button-primary {
+  /*  */
+}
+
+.icon-button-secondary {
+  /*  */
+}
+
+.input {
+  /*  */
+}
+
+.tag {
+  /*  */
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+  }
+}
