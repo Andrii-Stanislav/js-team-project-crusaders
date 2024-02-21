@@ -10,6 +10,7 @@
 @import url('./header.css');
 @import url('./modal.css');
 @import url('./modal-exercise.css');
+@import url('./quote.css');
 
 :root {
     --primary-dark: #242424;
