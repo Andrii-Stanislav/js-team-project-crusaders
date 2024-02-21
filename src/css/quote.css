@@ -2,12 +2,21 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  max-width: 335px;
 }
 
 @media only screen and (min-width: 768px) {
   .quote-main {
     flex-direction: row;
     flex-wrap: wrap;
+    max-width: none;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .quote-main {
+    flex-direction: column;
+    width: 444px;
   }
 }
 
@@ -25,6 +34,13 @@
   fill: #f4f4f4;
 }
 
+@media only screen and (min-width: 768px) {
+  .quote-icon-gradaptive {
+    width: 24px;
+    height: 24px;
+  }
+}
+
 .quote-card {
   height: auto;
   flex-shrink: 0;
@@ -34,6 +50,19 @@
   display: flex;
   gap: 18px;
 }
+/*  */
+@media only screen and (min-width: 768px) {
+  .quote-card {
+    padding: 40px;
+    width: 320px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .quote-card {
+    width: 365px;
+  }
+}
+
 .card-subtitle-flex {
   display: flex;
   justify-content: space-between;
@@ -46,13 +75,20 @@
   line-height: 1;
   margin-bottom: 8px;
 }
+@media only screen and (min-width: 768px) {
+  .card-subtitle {
+    font-size: 24px;
+    line-height: 1.33;
+  }
+}
+
 .quote-text,
 .quote-author {
   color: rgba(244, 244, 244, 0.6);
   font-size: 14px;
-  font-weight: 400;
   line-height: 1.285; /* 128.571% */
 }
+
 .quote-author {
   color: #f4f4f4;
   margin-top: 16px;
@@ -66,16 +102,21 @@
 }
 
 .quote-text-black {
-  display: -webkit-box;
-  -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical;
+  display: block;
+
   color: #242424;
 
-  overflow: hidden;
+  /* overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 245px;
+  max-width: 245px; */
   margin-top: 16px;
 }
+@media only screen and (min-width: 1440px) {
+  .quote-text-black {
+    max-width: none;
+  }
+}
+
 .cart3-flex {
   display: flex;
   gap: 18px;
@@ -83,12 +124,37 @@
   background: #fff;
   padding: 20px;
 }
+@media only screen and (min-width: 768px) {
+  .cart3-flex {
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 40px;
+    width: 320px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .cart3-flex {
+    width: 365px;
+  }
+}
 .quote-text-subtext3 {
   color: rgba(36, 36, 36, 0.6);
 }
 .card-subtitle-black {
   color: #242424;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1; /* 100% */
 }
+@media only screen and (min-width: 768px) {
+  .card-subtitle-black {
+    font-size: 24px;
+    line-height: 1.33; /* 133.333% */
+  }
+}
+
 .image-quote {
   width: 100%;
   max-width: 335px;
@@ -99,5 +165,41 @@
   .image-quote {
     max-width: 288px;
     height: auto;
+  }
+}
+
+.adaptive-background {
+  background-image: url(../images/quote/women@mobil.webp);
+  height: 242px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  border-radius: 20px;
+}
+@media only screen and (min-width: 768px) and (max-width: 1439px) {
+  .adaptive-background {
+    background-image: url(../images/quote/women@tablet.webp);
+    width: 288px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .adaptive-background {
+    background-image: url(../images/quote/women@desk.webp);
+    width: 444px;
+  }
+}
+
+.quote-text-group {
+  overflow: hidden;
+  max-height: 161px;
+  text-overflow: ellipsis;
+}
+
+@media only screen and (min-width: 1440px) {
+  .quote-text-group {
+    overflow: visible;
+    max-height: none;
   }
 }
