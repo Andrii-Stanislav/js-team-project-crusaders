@@ -9,6 +9,7 @@
 
 @import url('./header.css');
 @import url('./quote.css');
+@import url('./footer.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
