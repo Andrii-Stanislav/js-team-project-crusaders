@@ -1,5 +1,6 @@
-import spriteUrl from '../css/icons.svg';
-import { fetchExercise } from './api/fetch-exercise';
+import spriteUrl from './../../images/svg/icons.svg';
+import { fetchExercise } from '../api/fetch-exercise';
+import { isFavorite } from './../storage/favorites'
 export class Modal {
   constructor() {
     this.modal = document.getElementById('modalDescription');
@@ -186,31 +187,13 @@ export function createModalExercisesMarkup(cardData) {
 // }
 
 
-// export const getFromLocal = key => {
-//   try {
-//     const storedItem = localStorage.getItem(key);
 
-//     if (storedItem) {
-//       return JSON.parse(storedItem);
-//     }
-
-//     return null;
-//   } catch (error) {
-//     console.error('Error get localStorage:', error);
-//     return null;
-//   }
-// };
-
-// const checkIsFavourite = (data = getFromLocal('favorites') || []) => {
-//   return data.find(item => item?._id === cardData._id);
-// };
-
-// export const handleClickFavoritesBtn = () => {
+// export const handleClickFavoritesBtn = cardData => {
 //   const favoriteButton = document.querySelector(
 //     '.modal-exercises__button-favourites'
 //   );
-
-//   if (!checkIsFavourite()) {
+//   const isFavorite = isFavorite(cardData._id)
+//   if (!isFavorite) {
 //     // TODO: addFavoriteCardToLocal(cardData);
 
 //     favoriteButton.innerHTML = `Unfavorite

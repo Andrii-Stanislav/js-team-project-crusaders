@@ -20,6 +20,13 @@
   background-color: var(--primary-dark);
 }
 
+.modal-exercises--rating {
+  width: 292px;
+  padding: 40px 20px;
+  border-radius: 20px;
+  background-color: var(--primary-dark);
+}
+
 
 .modal-exercises__image-wrapper {
   min-width: 270px;
@@ -240,6 +247,9 @@
 }
 
 @media screen and (min-width: 1376px) {
+  .modal-exercises--rating { 
+    width: 500px
+  }
   .modal-exercises {
     width: 641px;
     padding: 32px;
