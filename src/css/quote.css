@@ -1,0 +1,103 @@
+.quote-main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .quote-main {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.svg-circle-grey {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  background-color: rgba(244, 244, 244, 0.2);
+  flex-shrink: 0;
+}
+.quote-icon-grey {
+  fill: #f4f4f4;
+}
+
+.quote-card {
+  height: auto;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: #242424;
+  padding: 20px;
+  display: flex;
+  gap: 18px;
+}
+.card-subtitle-flex {
+  display: flex;
+  justify-content: space-between;
+}
+.card-subtitle {
+  color: #f4f4f4;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.quote-text,
+.quote-author {
+  color: rgba(244, 244, 244, 0.6);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.285; /* 128.571% */
+}
+.quote-author {
+  color: #f4f4f4;
+  margin-top: 16px;
+}
+
+.svg-circle-black {
+  background-color: rgba(36, 36, 36, 1);
+}
+.quote-icon-man {
+  fill: #f4f4f4;
+}
+
+.quote-text-black {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  color: #242424;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 245px;
+  margin-top: 16px;
+}
+.cart3-flex {
+  display: flex;
+  gap: 18px;
+  border-radius: 20px;
+  background: #fff;
+  padding: 20px;
+}
+.quote-text-subtext3 {
+  color: rgba(36, 36, 36, 0.6);
+}
+.card-subtitle-black {
+  color: #242424;
+}
+.image-quote {
+  width: 100%;
+  max-width: 335px;
+  height: auto;
+  border-radius: 20px;
+}
+@media only screen and (min-width: 768px) {
+  .image-quote {
+    max-width: 288px;
+    height: auto;
+  }
+}
