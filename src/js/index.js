@@ -1,4 +1,4 @@
 export * from './dom/favorites';
-export * from './dom/modal';
+export * from './dom/modal-exercises';
 
 

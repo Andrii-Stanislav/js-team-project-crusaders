@@ -1,46 +1,6 @@
 import spriteUrl from './../../images/svg/icons.svg';
 import { fetchExercise } from '../api/fetch-exercise';
-import { isFavorite } from './../storage/favorites'
-export class Modal {
-  constructor() {
-    this.modal = document.getElementById('modalDescription');
-    this.closeBtn = document.querySelector('.button-close');
-    this.modalContent = document.querySelector('.modal-exercises__card');
-
-    this.handleCloseButtonClick = this.handleCloseButtonClick.bind(this);
-    this.handleModalClick = this.handleModalClick.bind(this);
-
-    this.init();
-  }
-
-  init() {
-    this.closeBtn.addEventListener('click', this.handleCloseButtonClick);
-    this.modal.addEventListener('click', this.handleModalClick);
-  }
-
-  handleCloseButtonClick() {
-    this.close();
-  }
-
-  handleModalClick(event) {
-    if (event.target == this.modal) {
-      this.close();
-    }
-  }
-
-  open() {
-    this.modal.showModal();
-  }
-
-  close() {
-    this.modal.close();
-  }
-
-  destroy() {
-    this.closeBtn.removeEventListener('click', this.handleCloseButtonClick);
-    this.modal.removeEventListener('click', this.handleModalClick);
-  }
-}
+import Modal from '../helper/modal';
 
 document.getElementById('open-modal').addEventListener('click', () => {
   modalExercises('64f389465ae26083f39b17a5');
@@ -66,7 +26,12 @@ export async function modalExercises(id, fn) {
     myModal.modalContent.addEventListener('click', event => {
       if (event.target.closest('.modal-exercises__button-favourites')) {
         // handleClickFavoritesBtn(cardData);
-        console.log('tyt');
+      }
+    });
+    myModal.modalContent.addEventListener('click', event => {
+      if (event.target.closest('.modal-exercises__button-rating')) {
+        myModal.close()
+        handleRatingCick(cardData._id);
       }
     });
   } catch (error) {
@@ -89,7 +54,7 @@ export function createModalExercisesMarkup(cardData) {
     _id,
   } = cardData;
 
-  return `
+  return `<div class="modal-exercises__card" >
     <div class="modal-exercises__image-wrapper">
       <img class="modal-exercises__image" src="${
         gifUrl !== null ? gifUrl : noImageUrl
@@ -165,10 +130,13 @@ export function createModalExercisesMarkup(cardData) {
         </button>
         <button class="modal-exercises__button-rating" data-value="${_id}">Give a rating</button>
       </div>
+    </div>
     </div>`;
 }
 
-
+export function handleRatingCick(id) { 
+  
+}
 
 // const exercisesListRef = document.getElementById('exercises-list-container');
 
