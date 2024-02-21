@@ -8,9 +8,19 @@
 @import url('./base-ui.css');
 
 @import url('./header.css');
+@import url('./modal.css');
+@import url('./modal-exercise.css');
 @import url('./quote.css');
 
 :root {
+    --primary-dark: #242424;
+      --bg-color: #f4f4f4;
+      --bg-color-20: rgb(244, 244, 244, 0.2);
+      --font-weight-medium: 500;
+      --font-weight-reg: 400;
+      --bg-color-40: rgba(244, 244, 244, 0.658);
+      --bg-color-60: rgb(244, 244, 244, 0.6);
+      
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
