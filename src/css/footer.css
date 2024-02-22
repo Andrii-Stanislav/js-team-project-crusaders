@@ -118,6 +118,7 @@
   color: #242424;
   border: none;
   padding: 10px 20px;
+  font-size: 14px;
 }
 
 /* Footer Legal Styles */
@@ -189,6 +190,10 @@
     width: 352px;
   }
 
+  .newsletter-button {
+    font-size: 16px;
+  }
+
   .footer-legal {
     display: flex;
     gap: 78px;
@@ -236,6 +241,14 @@
 
   .newsletter-form {
     padding: 0;
+  }
+
+  .newsletter-button, .newsletter-input{
+    font-size: 16px;
+  }
+
+  .newsletter-button:hover{
+    background-color: #C6CDD1;
   }
 
   .footer-link:hover {
