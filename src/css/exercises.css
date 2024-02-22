@@ -33,7 +33,7 @@
   border-radius: 15px;
   border: 1px solid var(--primary-dark);
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
 }
 
 .exercise-rating {
@@ -90,7 +90,7 @@
 
 .exercise-title {
   font-size: 24px;
-  font-weight: 400;
+  font-weight: var(--font-weight-reg);
   line-height: 1.33;
 }
 

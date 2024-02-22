@@ -7,13 +7,13 @@
 .breadcrumbs-title,
 .breadcrumbs-divider {
   font-size: 44px;
-  font-weight: 400;
+  font-weight: var(--font-weight-reg);
   line-height: 1.091;
 }
 
 .breadcrumbs-subtitle {
   font-size: 24px;
-  font-weight: 400;
+  font-weight: var(--font-weight-reg);
   color: var(--light-gray);
   line-height: 1.33;
   text-transform: capitalize;

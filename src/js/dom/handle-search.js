@@ -4,7 +4,7 @@ import createExercisesMarkup from './create-exercises-markup';
 
 import clearElement from './clear-element';
 
-import { exercisesContainer, searchInputElement } from '../refs';
+import { refs } from '../refs';
 
 export default async function handleSearchSubmit(element, filter) {
   // Prevent page reload
@@ -25,12 +25,12 @@ export default async function handleSearchSubmit(element, filter) {
     // Show message for user that search keyword wasn't typed
     alert('You have to write a search query');
     // Clear search input
-    clearElement(searchInputElement);
+    clearElement(refs.searchInputElement);
     return;
   }
 
   const responseData = await getExercises(filter, searchInputValue);
 
   // Render exercises list
-  createExercisesMarkup(exercisesContainer, responseData);
+  createExercisesMarkup(refs.exercisesContainer, responseData);
 }

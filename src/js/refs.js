@@ -1,20 +1,9 @@
-export const searchInputElement = document.querySelector('.search-input');
-
-export const searchClearButton = document.querySelector('.button-clear');
-
-export const searchFormElement = document.querySelector('.search-form');
-
-export const exercisesContainer = document.querySelector(
-  '.exercises-container'
-);
-
-export const breadcrumbsText = document.querySelector('.breadcrumbs-subtitle');
-
-export const breadcrumbsDivider = document.querySelector(
-  '.breadcrumbs-divider'
-);
-
 export const refs = {
   body: document.querySelector('body'),
-  // TODO
+  searchInputElement: document.querySelector('.search-input'),
+  searchClearButton: document.querySelector('.button-clear'),
+  searchFormElement: document.querySelector('.search-form'),
+  exercisesContainer: document.querySelector('.exercises-container'),
+  breadcrumbsText: document.querySelector('.breadcrumbs-subtitle'),
+  breadcrumbsDivider: document.querySelector('.breadcrumbs-divider'),
 };

@@ -1,4 +1,4 @@
-import { searchInputElement } from '../refs';
+import { refs } from '../refs';
 
 import clearElement from './clear-element';
 
@@ -8,7 +8,7 @@ export default function createExercisesMarkup(element, apiResponse) {
   // Check if data received
   if (!apiResponse) {
     // Clear input if nothing found
-    clearElement(searchInputElement);
+    clearElement(refs.searchInputElement);
     // Insert message in UI
     element.insertAdjacentHTML(
       'afterbegin',
