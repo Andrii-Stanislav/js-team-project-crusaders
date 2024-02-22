@@ -13,6 +13,7 @@ export const breadcrumbsText = document.querySelector('.breadcrumbs-subtitle');
 export const breadcrumbsDivider = document.querySelector(
   '.breadcrumbs-divider'
 );
+
 export const refs = {
   body: document.querySelector('body'),
   // TODO
