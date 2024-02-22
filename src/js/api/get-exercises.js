@@ -1,7 +1,7 @@
-import { BASE_URL } from './config';
+import { apiInstance } from './config';
 
 // Function sends get request by using filters saved in local storage and keywords from user input
-export default async function getExercises(filter, keyword, page = 1) {
+export const getExercises = (filter, keyword, page = 1) => {
   // Create dynamic parameters for get request based on active filter
   let params = new URLSearchParams({
     //Active filter parametr
@@ -12,16 +12,5 @@ export default async function getExercises(filter, keyword, page = 1) {
     limit: 10,
   });
 
-  try {
-    const response = await fetch(`${BASE_URL}/exercises?${params}`);
-    const data = await response.json();
-
-    // Stop function if nothing is find
-    if (!data.results.length) {
-      return;
-    }
-    return data;
-  } catch (error) {
-    console.error(error.message);
-  }
-}
+  return apiInstance.get(`/exercises?${params}`);
+};
