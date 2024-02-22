@@ -3,12 +3,6 @@
   flex-direction: column;
   gap: 20px;
 }
-.quote-main-fav {
-  display: grid;
-  gap: 20px;
-  max-width: 335px;
-  grid-template-columns: 1fr;
-}
 
 .quote-main {
   display: flex;
@@ -20,16 +14,10 @@
   .quote {
     gap: 32px;
   }
+
   .quote-main {
     gap: 16px;
     flex-direction: row;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .quote-main-fav {
-    gap: 20px;
-    max-width: none;
-    align-items: start;
   }
 }
 
@@ -38,16 +26,13 @@
     max-width: 444px;
   }
 
+  .quote-fav {
+    max-width: 494px;
+  }
+
   .quote-main {
     gap: 32px;
     flex-direction: column;
-  }
-}
-
-@media only screen and (min-width: 1440px) {
-  .quote-main-fav {
-    grid-template-columns: repeat(1, 444px);
-    justify-content: center;
   }
 }
 
@@ -97,32 +82,28 @@
   padding: 20px;
   display: grid;
   gap: 18px;
-  grid-template-columns: auto 1fr;
+  margin-bottom: 20px;
 }
 
 @media only screen and (min-width: 768px) {
   .quote-card {
     padding: 40px;
-    grid-template-columns: auto 1fr;
     flex-grow: 2;
     max-width: 400px;
   }
 
   .quote-card-fav {
     padding: 40px;
-    grid-template-columns: auto 1fr;
-    width: 624px;
+    margin-bottom: 16px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .quote-card {
     max-width: unset;
-    grid-template-columns: auto 1fr;
   }
 
   .quote-card-fav {
-    width: 414px;
     grid-template-columns: auto 1fr;
   }
 }
@@ -235,14 +216,8 @@
 
 @media screen and (min-width: 768px) {
   .cart3-flex-fav {
+    width: 50%;
     padding: 25px;
-    width: 294px;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .cart3-flex-fav {
-    width: 214px;
   }
 }
 
@@ -299,7 +274,7 @@
   }
 }
 
-.adaptive-background-fav {
+.quote-image-fav {
   background-image: url(../images/quote/women@mobil-fav.webp);
   background-repeat: no-repeat;
   background-position: center;
@@ -310,14 +285,14 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .adaptive-background-fav {
-    width: calc((100% - 16px) / 2);
+  .quote-image-fav {
+    width: 50%;
   }
 }
 
 @media screen and (min-device-pixel-ratio: 2) and (max-width: 767.98px),
   screen and (min-resolution: 192dpi) and (max-width: 767.98px) {
-  .adaptive-background-fav {
+  .quote-image-fav {
     background-image: url(../images/quote/women@2mobil-fav.webp);
   }
 }
@@ -337,9 +312,8 @@
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1439px) {
-  .adaptive-background-fav {
+  .quote-image-fav {
     background-image: url(../images/quote/women@tablet-fav.webp);
-    /* width: 288px; */
   }
 }
 
@@ -352,7 +326,7 @@
 
 @media screen and (min-device-pixel-ratio: 2) and (min-width: 768px) and (max-width: 1439px),
   screen and (min-resolution: 192dpi) and (min-width: 768px) and (max-width: 1439px) {
-  .adaptive-background-fav {
+  .quote-image-fav {
     background-image: url(../images/quote/women@2tablet-fav.webp);
   }
 }
@@ -366,7 +340,7 @@
 }
 
 @media only screen and (min-width: 1440px) {
-  .adaptive-background-fav {
+  .quote-image-fav {
     background-image: url(../images/quote/women@desk-fav.webp);
   }
 }
@@ -380,7 +354,7 @@
 
 @media screen and (min-device-pixel-ratio: 2) and (min-width: 1440px),
   screen and (min-resolution: 192dpi) and (min-width: 1440px) {
-  .adaptive-background-fav {
+  .quote-image-fav {
     background-image: url(../images/quote/women@2desk-fav.webp);
   }
 }
@@ -406,12 +380,5 @@
   .fav-tabl-block {
     flex-direction: row;
     gap: 16px;
-    justify-content: space-between;
-    width: 704px;
-  }
-}
-@media only screen and (min-width: 1440px) {
-  .fav-tabl-block {
-    width: 494px;
   }
 }
