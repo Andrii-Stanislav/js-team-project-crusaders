@@ -1,80 +1,46 @@
 import spriteUrl from './../../images/svg/icons.svg';
 import { fetchExercise } from '../api/fetch-exercise';
-import { isFavorite } from './../storage/favorites'
-export class Modal {
-  constructor() {
-    this.modal = document.getElementById('modalDescription');
-    this.closeBtn = document.querySelector('.button-close');
-    this.modalContent = document.querySelector('.modal-exercises__card');
+import Modal from '../helper/modal';
+import modalExerciseRating from './modal-exercise-rating';
 
-    this.handleCloseButtonClick = this.handleCloseButtonClick.bind(this);
-    this.handleModalClick = this.handleModalClick.bind(this);
+// document.getElementById('open-modal').addEventListener('click', () => {
+//   modalExercises('64f389465ae26083f39b17a5');
+// });
 
-    this.init();
-  }
+export async function modalExercises(id) {
+  const modal = new Modal();
 
-  init() {
-    this.closeBtn.addEventListener('click', this.handleCloseButtonClick);
-    this.modal.addEventListener('click', this.handleModalClick);
-  }
-
-  handleCloseButtonClick() {
-    this.close();
-  }
-
-  handleModalClick(event) {
-    if (event.target == this.modal) {
-      this.close();
+  function favouritesButtonHandler(event) {
+    if (event.target.closest('.modal-exercises__button-favourites')) {
+      // handleClickFavoritesBtn(cardData);
     }
   }
 
-  open() {
-    this.modal.showModal();
+  function ratingButtonHandler(event) {
+    if (event.target.closest('.modal-exercises__button-rating')) {
+      modal.close()
+      modalExerciseRating(id);
+    }
   }
-
-  close() {
-    this.modal.close();
-  }
-
-  destroy() {
-    this.closeBtn.removeEventListener('click', this.handleCloseButtonClick);
-    this.modal.removeEventListener('click', this.handleModalClick);
-  }
-}
-
-document.getElementById('open-modal').addEventListener('click', () => {
-  modalExercises('64f389465ae26083f39b17a5');
-});
-
-export async function modalExercises(id, fn) {
-  const myModal = new Modal();
 
   try {
     const cardData = await fetchExercise(id);
 
-    myModal.modalContent.innerHTML = '';
+    modal.setContent(createModalExercisesMarkup({
+      ...cardData,
+      rating: Number(cardData.rating).toFixed(1),
+    }));
 
-    myModal.modalContent.insertAdjacentHTML(
-      'beforeend',
-      createModalExercisesMarkup({
-        ...cardData,
-        rating: Number(cardData.rating).toFixed(1),
-      })
-    );
-    myModal.open();
+    modal.addContentListener('click', favouritesButtonHandler)
+    modal.addContentListener('click', ratingButtonHandler)
 
-    myModal.modalContent.addEventListener('click', event => {
-      if (event.target.closest('.modal-exercises__button-favourites')) {
-        // handleClickFavoritesBtn(cardData);
-        console.log('tyt');
-      }
-    });
+    modal.open();
   } catch (error) {
     console.error(error);
   }
 }
 
-export function createModalExercisesMarkup(cardData) {
+function createModalExercisesMarkup(cardData) {
   const {
     name,
     burnedCalories,
@@ -89,7 +55,7 @@ export function createModalExercisesMarkup(cardData) {
     _id,
   } = cardData;
 
-  return `
+  return `<div class="modal-exercises__card" >
     <div class="modal-exercises__image-wrapper">
       <img class="modal-exercises__image" src="${
         gifUrl !== null ? gifUrl : noImageUrl
@@ -124,7 +90,7 @@ export function createModalExercisesMarkup(cardData) {
         </div>
         <div class="modal-exercises__partials-item">
           <p class="modal-exercises__partials-title">Burned calories</p>
-          <p class="modal-exercises__partials-value">${burnedCalories}/${time} 
+          <p class="modal-exercises__partials-value">${burnedCalories}/${time}
             <span class="modal-exercises__partials-value_span">min</span>
           </p>
         </div>
@@ -135,7 +101,7 @@ export function createModalExercisesMarkup(cardData) {
       <div class="modal-exercises__buttons">
       ${
         false
-          ? `<button 
+          ? `<button
           type="button"
           class="modal-exercises__button-favourites unfavorite-btn"
           >
@@ -148,7 +114,7 @@ export function createModalExercisesMarkup(cardData) {
           >
             <use href=${spriteUrl}#icon-trash></use>
           </svg>`
-          : `<button 
+          : `<button
           type="button"
           class="modal-exercises__button-favourites
           add-to-favorites-btn">
@@ -165,10 +131,13 @@ export function createModalExercisesMarkup(cardData) {
         </button>
         <button class="modal-exercises__button-rating" data-value="${_id}">Give a rating</button>
       </div>
+    </div>
     </div>`;
 }
 
+export function handleRatingCick(id) {
 
+}
 
 // const exercisesListRef = document.getElementById('exercises-list-container');
 

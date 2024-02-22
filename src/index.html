@@ -3,15 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Energy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alike+Angular&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Eczar&family=Neuton&family=Raleway:wght@800&family=Roboto:wght@400;500;700;900&family=Space+Mono&family=Work+Sans&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
+
   <body>
+    <a href="./favorites.html"> to favorit test delete later </a>
+
     <load src="partials/header.html" />
+
+    <load src="partials/hero.html" />
+
     <main>
-      <load src="./partials/quote.html" />
+      <div class="container main-content">
+        <div class="main-quote">
+          <load src="./partials/quote.html" />
+        </div>
+
+        <div class="main-exercises">
+          <div style="color: black">Lists</div>
+        </div>
+      </div>
     </main>
+
+    <load src="partials/modal.html" />
+
+    <load src="partials/footer.html" />
+
     <script type="module" src="./main.js"></script>
   </body>
 </html>

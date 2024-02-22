@@ -1,11 +1,19 @@
 html {
+  box-sizing: border-box;
   scroll-behavior: smooth;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 body {
   font-family: 'DM Sans', sans-serif;
   background: #e5e5e5;
   font-style: normal;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -14,6 +22,12 @@ body {
   padding-right: 20px;
   margin-left: auto;
   margin-right: auto;
+}
+
+input,
+textarea,
+button {
+  font-family: inherit;
 }
 
 .button-primary {

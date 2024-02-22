@@ -1,22 +1,38 @@
+.quote {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .quote-main {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-width: 335px;
 }
 
-@media only screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
+  .quote {
+    gap: 32px;
+  }
+
   .quote-main {
+    gap: 16px;
     flex-direction: row;
-    flex-wrap: wrap;
-    max-width: none;
   }
 }
 
-@media only screen and (min-width: 1440px) {
+@media screen and (min-width: 1440px) {
+  .quote {
+    max-width: 444px;
+  }
+
+  .quote-fav {
+    max-width: 494px;
+  }
+
   .quote-main {
+    gap: 32px;
     flex-direction: column;
-    width: 444px;
   }
 }
 
@@ -30,11 +46,17 @@
   background-color: rgba(244, 244, 244, 0.2);
   flex-shrink: 0;
 }
+
 .quote-icon-grey {
   fill: #f4f4f4;
 }
 
-@media only screen and (min-width: 768px) {
+.quote-icon-gradaptive {
+  position: absolute;
+  right: 0;
+}
+
+@media screen and (min-width: 768px) {
   .quote-icon-gradaptive {
     width: 24px;
     height: 24px;
@@ -47,26 +69,52 @@
   border-radius: 20px;
   background: #242424;
   padding: 20px;
-  display: flex;
+  display: grid;
   gap: 18px;
+  grid-template-columns: auto 1fr;
 }
-/*  */
+
+.quote-card-fav {
+  height: auto;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: #242424;
+  padding: 20px;
+  display: grid;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
 @media only screen and (min-width: 768px) {
   .quote-card {
     padding: 40px;
-    width: 320px;
+    flex-grow: 2;
+    max-width: 400px;
+  }
+
+  .quote-card-fav {
+    padding: 40px;
+    margin-bottom: 16px;
   }
 }
-@media only screen and (min-width: 1440px) {
+
+@media screen and (min-width: 1440px) {
   .quote-card {
-    width: 365px;
+    max-width: unset;
+  }
+
+  .quote-card-fav {
+    grid-template-columns: auto 1fr;
   }
 }
 
 .card-subtitle-flex {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr;
   justify-content: space-between;
+  position: relative;
 }
+
 .card-subtitle {
   color: #f4f4f4;
   font-feature-settings: 'clig' off, 'liga' off;
@@ -75,7 +123,8 @@
   line-height: 1;
   margin-bottom: 8px;
 }
-@media only screen and (min-width: 768px) {
+
+@media screen and (min-width: 768px) {
   .card-subtitle {
     font-size: 24px;
     line-height: 1.33;
@@ -86,7 +135,7 @@
 .quote-author {
   color: rgba(244, 244, 244, 0.6);
   font-size: 14px;
-  line-height: 1.285; /* 128.571% */
+  line-height: 18px;
 }
 
 .quote-author {
@@ -94,112 +143,242 @@
   margin-top: 16px;
 }
 
-.svg-circle-black {
-  background-color: rgba(36, 36, 36, 1);
+@media screen and (min-width: 768px) {
+  .quote-author {
+    font-size: 16px;
+    line-height: 1.5;
+  }
 }
+
+.svg-circle-black {
+  background-color: #242424;
+}
+
 .quote-icon-man {
   fill: #f4f4f4;
 }
 
+.quote-icon-man-fav {
+  fill: #242424;
+}
+
 .quote-text-black {
-  display: block;
-
-  color: #242424;
-
-  /* overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 245px; */
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  font-size: 14px;
+  /* line-height: 1.285;  */
+  line-height: 18px;
+  color: #242424;
   margin-top: 16px;
 }
-@media only screen and (min-width: 1440px) {
+
+.quote-text-black:hover {
+  /* max-height: 1000px; */
+  -webkit-line-clamp: 12;
+}
+
+@media screen and (min-width: 768px) {
   .quote-text-black {
-    max-width: none;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .quote-text-black {
+    -webkit-line-clamp: 9;
   }
 }
 
 .cart3-flex {
-  display: flex;
+  display: grid;
   gap: 18px;
   border-radius: 20px;
   background: #fff;
   padding: 20px;
+  min-height: 169px;
+  grid-template-columns: auto 1fr;
 }
-@media only screen and (min-width: 768px) {
+
+.cart3-flex-fav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-radius: 20px;
+  background: #fff;
+  padding: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .cart3-flex-fav {
+    width: 50%;
+    padding: 25px;
+  }
+}
+
+@media screen and (min-width: 768px) {
   .cart3-flex {
-    font-size: 16px;
-    line-height: 1.5;
     padding: 40px;
-    width: 320px;
+    grid-template-columns: auto 1fr;
+    max-width: 400px;
   }
 }
-@media only screen and (min-width: 1440px) {
+
+@media screen and (min-width: 1440px) {
   .cart3-flex {
-    width: 365px;
+    padding: 40px;
+    grid-template-columns: auto 1fr;
+    max-width: unset;
   }
 }
+
 .quote-text-subtext3 {
   color: rgba(36, 36, 36, 0.6);
 }
+
 .card-subtitle-black {
   color: #242424;
   font-feature-settings: 'clig' off, 'liga' off;
   font-size: 20px;
-  font-style: normal;
   font-weight: 500;
-  line-height: 1; /* 100% */
+  line-height: 1;
 }
-@media only screen and (min-width: 768px) {
+.card-subtitle-black-fav {
+  margin-bottom: 6px;
+}
+
+@media screen and (min-width: 768px) {
   .card-subtitle-black {
     font-size: 24px;
     line-height: 1.33; /* 133.333% */
   }
 }
 
-.image-quote {
-  width: 100%;
-  max-width: 335px;
-  height: auto;
-  border-radius: 20px;
-}
-@media only screen and (min-width: 768px) {
-  .image-quote {
-    max-width: 288px;
-    height: auto;
-  }
-}
-
-.adaptive-background {
+.quote-image {
   background-image: url(../images/quote/women@mobil.webp);
-  height: 242px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   width: 100%;
   border-radius: 20px;
 }
-@media only screen and (min-width: 768px) and (max-width: 1439px) {
-  .adaptive-background {
+
+@media screen and (max-width: 767px) {
+  .quote-image {
+    height: 242px;
+  }
+}
+
+.quote-image-fav {
+  background-image: url(../images/quote/women@mobil-fav.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  border-radius: 20px;
+  min-height: 119px;
+}
+
+@media only screen and (min-width: 768px) {
+  .quote-image-fav {
+    width: 50%;
+  }
+}
+
+@media screen and (min-device-pixel-ratio: 2) and (max-width: 767.98px),
+  screen and (min-resolution: 192dpi) and (max-width: 767.98px) {
+  .quote-image-fav {
+    background-image: url(../images/quote/women@2mobil-fav.webp);
+  }
+}
+
+@media screen and (min-device-pixel-ratio: 2) and (max-width: 767.98px),
+  screen and (min-resolution: 192dpi) and (max-width: 767.98px) {
+  .quote-image {
+    background-image: url(../images/quote/women@2mobil.webp);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .quote-image {
     background-image: url(../images/quote/women@tablet.webp);
     width: 288px;
   }
 }
 
-@media only screen and (min-width: 1440px) {
-  .adaptive-background {
+@media only screen and (min-width: 768px) and (max-width: 1439px) {
+  .quote-image-fav {
+    background-image: url(../images/quote/women@tablet-fav.webp);
+  }
+}
+
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 768px) and (max-width: 1439px),
+  screen and (min-resolution: 192dpi) and (min-width: 768px) and (max-width: 1439px) {
+  .quote-image {
+    background-image: url(../images/quote/women@2tablet.webp);
+  }
+}
+
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 768px) and (max-width: 1439px),
+  screen and (min-resolution: 192dpi) and (min-width: 768px) and (max-width: 1439px) {
+  .quote-image-fav {
+    background-image: url(../images/quote/women@2tablet-fav.webp);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .quote-image {
     background-image: url(../images/quote/women@desk.webp);
-    width: 444px;
+    width: 100%;
+    height: 242px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .quote-image-fav {
+    background-image: url(../images/quote/women@desk-fav.webp);
+  }
+}
+
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 1440px),
+  screen and (min-resolution: 192dpi) and (min-width: 1440px) {
+  .quote-image {
+    background-image: url(../images/quote/women@2desk.webp);
+  }
+}
+
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 1440px),
+  screen and (min-resolution: 192dpi) and (min-width: 1440px) {
+  .quote-image-fav {
+    background-image: url(../images/quote/women@2desk-fav.webp);
   }
 }
 
 .quote-text-group {
-  overflow: hidden;
-  max-height: 161px;
-  text-overflow: ellipsis;
+  max-height: none;
 }
 
-@media only screen and (min-width: 1440px) {
+@media screen and (min-width: 1440px) {
   .quote-text-group {
     overflow: visible;
     max-height: none;
+  }
+}
+
+.fav-tabl-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .fav-tabl-block {
+    flex-direction: row;
+    gap: 16px;
   }
 }
