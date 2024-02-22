@@ -1,0 +1,28 @@
+.main-content {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 64px;
+  padding-bottom: 80px;
+}
+
+.main-quote {
+  flex-shrink: 2;
+}
+
+.main-exercises {
+  flex-grow: 2;
+}
+
+@media only screen and (min-width: 768px) {
+  .main-content {
+    padding-bottom: 100px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .main-content {
+    flex-direction: row;
+    gap: 32px;
+    padding-bottom: 130px;
+  }
+}

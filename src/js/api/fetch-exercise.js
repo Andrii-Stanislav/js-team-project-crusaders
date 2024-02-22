@@ -1,12 +1,3 @@
-import { BASE_URL } from './config';
+import { apiInstance } from './config';
 
-export async function fetchExercise(id) {
-  const URL = `${BASE_URL}/exercises/${id}`;
-
-  try {
-    const res = await fetch(URL);
-    return await res.json();
-  } catch {
-    console.log('error')
-  }
-}
+export const fetchExercise = id => apiInstance.get(`/exercises/${id}`);

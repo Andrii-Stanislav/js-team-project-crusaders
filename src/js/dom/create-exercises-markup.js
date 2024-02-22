@@ -1,6 +1,6 @@
 import { refs } from '../refs';
 
-import clearElement from './clear-element';
+import clearElement from '../helper/clear-element';
 
 export default function createExercisesMarkup(element, apiResponse) {
   // Clear list in DOM before each request

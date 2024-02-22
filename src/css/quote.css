@@ -1,23 +1,33 @@
-.quote-main {
-  display: grid;
+.quote {
+  display: flex;
+  flex-direction: column;
   gap: 20px;
-  max-width: 335px;
-  grid-template-columns: 1fr;
 }
 
-@media only screen and (min-width: 768px) {
+.quote-main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .quote {
+    gap: 32px;
+  }
   .quote-main {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    max-width: none;
-    align-items: start;
+    gap: 16px;
+    flex-direction: row;
   }
 }
 
-@media only screen and (min-width: 1440px) {
+@media screen and (min-width: 1440px) {
+  .quote {
+    max-width: 444px;
+  }
+
   .quote-main {
-    grid-template-columns: repeat(1, 444px);
-    justify-content: center;
+    gap: 32px;
+    flex-direction: column;
   }
 }
 
@@ -31,14 +41,17 @@
   background-color: rgba(244, 244, 244, 0.2);
   flex-shrink: 0;
 }
+
 .quote-icon-grey {
   fill: #f4f4f4;
 }
+
 .quote-icon-gradaptive {
   position: absolute;
   right: 0;
 }
-@media only screen and (min-width: 768px) {
+
+@media screen and (min-width: 768px) {
   .quote-icon-gradaptive {
     width: 24px;
     height: 24px;
@@ -55,17 +68,19 @@
   gap: 18px;
   grid-template-columns: auto 1fr;
 }
-/*  */
-@media only screen and (min-width: 768px) {
+
+@media screen and (min-width: 768px) {
   .quote-card {
     padding: 40px;
     grid-template-columns: auto 1fr;
-    width: 320px;
+    flex-grow: 2;
+    max-width: 400px;
   }
 }
-@media only screen and (min-width: 1440px) {
+
+@media screen and (min-width: 1440px) {
   .quote-card {
-    width: 365px;
+    max-width: unset;
     grid-template-columns: auto 1fr;
   }
 }
@@ -76,6 +91,7 @@
   justify-content: space-between;
   position: relative;
 }
+
 .card-subtitle {
   color: #f4f4f4;
   font-feature-settings: 'clig' off, 'liga' off;
@@ -84,7 +100,8 @@
   line-height: 1;
   margin-bottom: 8px;
 }
-@media only screen and (min-width: 768px) {
+
+@media screen and (min-width: 768px) {
   .card-subtitle {
     font-size: 24px;
     line-height: 1.33;
@@ -102,7 +119,8 @@
   color: #f4f4f4;
   margin-top: 16px;
 }
-@media only screen and (min-width: 768px) {
+
+@media screen and (min-width: 768px) {
   .quote-author {
     font-size: 16px;
     line-height: 1.5;
@@ -112,6 +130,7 @@
 .svg-circle-black {
   background-color: #242424;
 }
+
 .quote-icon-man {
   fill: #f4f4f4;
 }
@@ -131,18 +150,19 @@
   color: #242424;
   margin-top: 16px;
 }
+
 .quote-text-black:hover {
   /* max-height: 1000px; */
   -webkit-line-clamp: 12;
 }
 
-@media only screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .quote-text-black {
     margin-top: 20px;
   }
 }
 
-@media only screen and (min-width: 1440px) {
+@media screen and (min-width: 1440px) {
   .quote-text-black {
     -webkit-line-clamp: 9;
   }
@@ -157,22 +177,27 @@
   min-height: 169px;
   grid-template-columns: auto 1fr;
 }
-@media only screen and (min-width: 768px) {
+
+@media screen and (min-width: 768px) {
   .cart3-flex {
     padding: 40px;
     grid-template-columns: auto 1fr;
+    max-width: 400px;
   }
 }
-@media only screen and (min-width: 1440px) {
+
+@media screen and (min-width: 1440px) {
   .cart3-flex {
     padding: 40px;
     grid-template-columns: auto 1fr;
-    width: 365px;
+    max-width: unset;
   }
 }
+
 .quote-text-subtext3 {
   color: rgba(36, 36, 36, 0.6);
 }
+
 .card-subtitle-black {
   color: #242424;
   font-feature-settings: 'clig' off, 'liga' off;
@@ -181,26 +206,14 @@
   line-height: 1;
 }
 
-@media only screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .card-subtitle-black {
     font-size: 24px;
     line-height: 1.33; /* 133.333% */
   }
 }
 
-.image-quote {
-  width: 100%;
-  max-width: 335px;
-  height: auto;
-  border-radius: 20px;
-}
-@media only screen and (min-width: 768px) {
-  .image-quote {
-    max-width: 288px;
-  }
-}
-
-.adaptive-background {
+.quote-image {
   background-image: url(../images/quote/women@mobil.webp);
   background-repeat: no-repeat;
   background-position: center;
@@ -209,15 +222,21 @@
   border-radius: 20px;
 }
 
+@media screen and (max-width: 767px) {
+  .quote-image {
+    height: 242px;
+  }
+}
+
 @media screen and (min-device-pixel-ratio: 2) and (max-width: 767.98px),
   screen and (min-resolution: 192dpi) and (max-width: 767.98px) {
-  .adaptive-background {
+  .quote-image {
     background-image: url(../images/quote/women@2mobil.webp);
   }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1439px) {
-  .adaptive-background {
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .quote-image {
     background-image: url(../images/quote/women@tablet.webp);
     width: 288px;
   }
@@ -225,21 +244,21 @@
 
 @media screen and (min-device-pixel-ratio: 2) and (min-width: 768px) and (max-width: 1439px),
   screen and (min-resolution: 192dpi) and (min-width: 768px) and (max-width: 1439px) {
-  .adaptive-background {
+  .quote-image {
     background-image: url(../images/quote/women@2tablet.webp);
   }
 }
 
-@media only screen and (min-width: 1440px) {
-  .adaptive-background {
+@media screen and (min-width: 1440px) {
+  .quote-image {
     background-image: url(../images/quote/women@desk.webp);
-    width: 444px;
+    width: 100%;
     height: 242px;
   }
 }
 @media screen and (min-device-pixel-ratio: 2) and (min-width: 1440px),
   screen and (min-resolution: 192dpi) and (min-width: 1440px) {
-  .adaptive-background {
+  .quote-image {
     background-image: url(../images/quote/women@2desk.webp);
   }
 }
@@ -248,7 +267,7 @@
   max-height: none;
 }
 
-@media only screen and (min-width: 1440px) {
+@media screen and (min-width: 1440px) {
   .quote-text-group {
     overflow: visible;
     max-height: none;
