@@ -6,7 +6,7 @@ const addToFavorites = exerciseObject => {
   if (favorites) {
     const parsedFavorites = JSON.parse(favorites);
     const newFavorites = [
-      ...parsedFavorites.filter(f => f.id !== exerciseObject.id),
+      ...parsedFavorites.filter(f => f._id !== exerciseObject._id),
       exerciseObject,
     ];
     localStorage.setItem(FAVORITES_KEY, JSON.stringify(newFavorites));
@@ -15,11 +15,11 @@ const addToFavorites = exerciseObject => {
   }
 };
 
-const removeFromFavorites = id => {
+const removeFromFavorites = removeId => {
   const favorites = localStorage.getItem(FAVORITES_KEY);
   if (favorites) {
     const parsedFavorites = JSON.parse(favorites);
-    const filteredFavorites = parsedFavorites.filter(f => f.id !== id);
+    const filteredFavorites = parsedFavorites.filter(f => f._id !== removeId);
     localStorage.setItem(FAVORITES_KEY, JSON.stringify(filteredFavorites));
   }
 };
@@ -32,11 +32,11 @@ const getAllFavorites = () => {
   return [];
 };
 
-const isFavorite = id => {
+const isFavorite = checkId => {
   const favorites = localStorage.getItem(FAVORITES_KEY);
   if (favorites) {
     const parsedFavorites = JSON.parse(favorites);
-    return parsedFavorites.some(f => f.id === id);
+    return parsedFavorites.some(f => f._id === checkId);
   }
   return false;
 };
