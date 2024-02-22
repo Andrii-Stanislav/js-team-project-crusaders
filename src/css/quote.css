@@ -1,22 +1,23 @@
 .quote-main {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 20px;
   max-width: 335px;
+  grid-template-columns: 1fr;
 }
 
 @media only screen and (min-width: 768px) {
   .quote-main {
-    flex-direction: row;
-    flex-wrap: wrap;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
     max-width: none;
+    align-items: start;
   }
 }
 
 @media only screen and (min-width: 1440px) {
   .quote-main {
-    flex-direction: column;
-    width: 444px;
+    grid-template-columns: repeat(1, 444px);
+    justify-content: center;
   }
 }
 
@@ -33,7 +34,10 @@
 .quote-icon-grey {
   fill: #f4f4f4;
 }
-
+.quote-icon-gradaptive {
+  position: absolute;
+  right: 0;
+}
 @media only screen and (min-width: 768px) {
   .quote-icon-gradaptive {
     width: 24px;
@@ -47,25 +51,30 @@
   border-radius: 20px;
   background: #242424;
   padding: 20px;
-  display: flex;
+  display: grid;
   gap: 18px;
+  grid-template-columns: auto 1fr;
 }
 /*  */
 @media only screen and (min-width: 768px) {
   .quote-card {
     padding: 40px;
+    grid-template-columns: auto 1fr;
     width: 320px;
   }
 }
 @media only screen and (min-width: 1440px) {
   .quote-card {
     width: 365px;
+    grid-template-columns: auto 1fr;
   }
 }
 
 .card-subtitle-flex {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr;
   justify-content: space-between;
+  position: relative;
 }
 .card-subtitle {
   color: #f4f4f4;
@@ -86,54 +95,78 @@
 .quote-author {
   color: rgba(244, 244, 244, 0.6);
   font-size: 14px;
-  line-height: 1.285; /* 128.571% */
+  line-height: 18px;
 }
 
 .quote-author {
   color: #f4f4f4;
   margin-top: 16px;
 }
+@media only screen and (min-width: 768px) {
+  .quote-author {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
 
 .svg-circle-black {
-  background-color: rgba(36, 36, 36, 1);
+  background-color: #242424;
 }
 .quote-icon-man {
   fill: #f4f4f4;
 }
 
 .quote-text-black {
-  display: block;
-
-  color: #242424;
-
-  /* overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 245px; */
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  font-size: 14px;
+  /* line-height: 1.285;  */
+  line-height: 18px;
+  color: #242424;
   margin-top: 16px;
 }
+.quote-text-black:hover {
+  /* max-height: 1000px; */
+  -webkit-line-clamp: 12;
+}
+
+@media only screen and (min-width: 768px) {
+  .quote-text-black {
+    margin-top: 20px;
+  }
+}
+
 @media only screen and (min-width: 1440px) {
   .quote-text-black {
-    max-width: none;
+    -webkit-line-clamp: 9;
   }
 }
 
 .cart3-flex {
-  display: flex;
+  display: grid;
   gap: 18px;
   border-radius: 20px;
   background: #fff;
   padding: 20px;
+  min-height: 169px;
+  grid-template-columns: auto 1fr;
 }
 @media only screen and (min-width: 768px) {
   .cart3-flex {
-    font-size: 16px;
-    line-height: 1.5;
     padding: 40px;
-    width: 320px;
+    grid-template-columns: auto 1fr;
   }
 }
 @media only screen and (min-width: 1440px) {
   .cart3-flex {
+    padding: 40px;
+    grid-template-columns: auto 1fr;
     width: 365px;
   }
 }
@@ -144,10 +177,10 @@
   color: #242424;
   font-feature-settings: 'clig' off, 'liga' off;
   font-size: 20px;
-  font-style: normal;
   font-weight: 500;
-  line-height: 1; /* 100% */
+  line-height: 1;
 }
+
 @media only screen and (min-width: 768px) {
   .card-subtitle-black {
     font-size: 24px;
@@ -164,19 +197,25 @@
 @media only screen and (min-width: 768px) {
   .image-quote {
     max-width: 288px;
-    height: auto;
   }
 }
 
 .adaptive-background {
   background-image: url(../images/quote/women@mobil.webp);
-  height: 242px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   width: 100%;
   border-radius: 20px;
 }
+
+@media screen and (min-device-pixel-ratio: 2) and (max-width: 767.98px),
+  screen and (min-resolution: 192dpi) and (max-width: 767.98px) {
+  .adaptive-background {
+    background-image: url(../images/quote/women@2mobil.webp);
+  }
+}
+
 @media only screen and (min-width: 768px) and (max-width: 1439px) {
   .adaptive-background {
     background-image: url(../images/quote/women@tablet.webp);
@@ -184,17 +223,29 @@
   }
 }
 
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 768px) and (max-width: 1439px),
+  screen and (min-resolution: 192dpi) and (min-width: 768px) and (max-width: 1439px) {
+  .adaptive-background {
+    background-image: url(../images/quote/women@2tablet.webp);
+  }
+}
+
 @media only screen and (min-width: 1440px) {
   .adaptive-background {
     background-image: url(../images/quote/women@desk.webp);
     width: 444px;
+    height: 242px;
+  }
+}
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 1440px),
+  screen and (min-resolution: 192dpi) and (min-width: 1440px) {
+  .adaptive-background {
+    background-image: url(../images/quote/women@2desk.webp);
   }
 }
 
 .quote-text-group {
-  overflow: hidden;
-  max-height: 161px;
-  text-overflow: ellipsis;
+  max-height: none;
 }
 
 @media only screen and (min-width: 1440px) {
