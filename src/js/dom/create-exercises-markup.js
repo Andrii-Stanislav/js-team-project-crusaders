@@ -36,7 +36,7 @@ export default function createExercisesMarkup(element, apiResponse) {
         <p class="exercise-rating">
           ${rating}
           <svg class="rating-icon">
-            <use href="images/svg/icons.svg#icon-star"></use>
+            <use href="images/svg/icons.svg#icon-star-yellow"></use>
           </svg>
         </p>
       </div>

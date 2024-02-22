@@ -1,4 +1,4 @@
-const BASE_URL = 'https://your-energy.b.goit.study/api/exercises';
+import { BASE_URL } from './config';
 
 // Function sends get request by using filters saved in local storage and keywords from user input
 export default async function getExercises(filter, keyword, page = 1) {
@@ -13,7 +13,7 @@ export default async function getExercises(filter, keyword, page = 1) {
   });
 
   try {
-    const response = await fetch(`${BASE_URL}?${params}`);
+    const response = await fetch(`${BASE_URL}/exercises?${params}`);
     const data = await response.json();
 
     // Stop function if nothing is find
