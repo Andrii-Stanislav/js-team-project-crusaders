@@ -2,9 +2,9 @@ import spriteUrl from './../../images/svg/icons.svg';
 import { fetchExercise } from '../api/fetch-exercise';
 import Modal from '../helper/modal';
 
-document.getElementById('open-modal').addEventListener('click', () => {
-  modalExercises('64f389465ae26083f39b17a5');
-});
+// document.getElementById('open-modal').addEventListener('click', () => {
+//   modalExercises('64f389465ae26083f39b17a5');
+// });
 
 export async function modalExercises(id, fn) {
   const myModal = new Modal();
