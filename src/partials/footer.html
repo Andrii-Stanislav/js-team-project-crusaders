@@ -18,8 +18,8 @@
         <h3 class="newsletter-title">Transforming your <i>body</i> shape with us</h3>
         <div class="newsletter-signup">
           <p class="newsletter-instruction">Subscribe and learn about new exercises!</p>
-          <form class="newsletter-form" method="post" id="user">
-            <input type="email" name="email" class="newsletter-input" placeholder="Email" id="mailing-email" required />
+          <form class="newsletter-form js-footer-newsletter-form" method="post" id="user">
+            <input type="email" name="email" class="newsletter-input" placeholder="Email" id="mailing-email" required pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" />
             <button type="submit" class="newsletter-button">Send</button>
           </form>
         </div>
