@@ -1,0 +1,125 @@
+.exercises-container {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 32px;
+  column-gap: 16px;
+}
+
+.exercise-item {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--clear-white);
+  border-radius: 15px;
+  padding: 16px;
+}
+
+.exercise-top-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  font-size: 12px;
+}
+
+.exercise-top-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.exercise-tag {
+  display: inline-block;
+  padding: 5px 8px;
+  line-height: 1.3;
+  border-radius: 15px;
+  border: 1px solid var(--black);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.exercise-rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  line-height: 1.5;
+  height: fit-content;
+}
+
+.rating-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.exercise-start-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: unset;
+  border: none;
+  padding: 0;
+  font-size: 16px;
+  width: 61px;
+  height: 24px;
+}
+
+.icon-arrow {
+  width: 13px;
+  height: 13px;
+}
+
+.exercise-title-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.exercise-icon-container {
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  background-color: var(--black);
+  border-radius: 30px;
+  padding: 4px 5px;
+}
+
+.exercise-icon {
+  width: 100%;
+  height: 16px;
+  fill: var(--white);
+}
+
+.exercise-title {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.33;
+}
+
+.exercise-title::first-letter {
+  text-transform: capitalize;
+}
+
+.exercise-bottom-container {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  color: var(--light-gray);
+}
+
+.exercise-marked-text {
+  background-color: unset;
+}
+
+.exercise-info-text {
+  text-transform: capitalize;
+}
+
+.list-item-error {
+  margin: auto;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .exercise-item {
+    width: calc((100% - 16px) / 2);
+  }
+}
