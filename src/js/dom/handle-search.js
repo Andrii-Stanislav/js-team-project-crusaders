@@ -2,7 +2,7 @@ import { getExercises } from '../api/get-exercises';
 
 import createExercisesMarkup from './create-exercises-markup';
 
-import clearElement from './clear-element';
+import clearElement from '../helper/clear-element';
 
 import { refs } from '../refs';
 

@@ -12,11 +12,10 @@ const onResponse = response => {
 };
 
 const onResponseError = error => {
-  // TODO - discuss with team
-  // iziToast.error({
-  //   title: 'Error',
-  //   message: error.response.data.message,
-  // });
+  iziToast.error({
+    title: 'Error',
+    message: error.response.data.message,
+  });
 
   return Promise.reject(error);
 };
