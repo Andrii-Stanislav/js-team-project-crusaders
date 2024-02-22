@@ -1,9 +1,3 @@
-.contaniner-hero {
-  display: flex;
-  justify-content: space-between;
-}
-
-
 .hero {
   display: flex;
   flex-direction: column;
@@ -12,16 +6,24 @@
   padding-bottom: 50px;
 }
 
+.contaniner-hero {
+  display: flex;
+  justify-content: space-between;
+}
+
 .hero-container {
   display: flex;
   flex-direction: column;
   padding-bottom: 32px;
 }
 
+@media (max-width: 767.98px) {
+  .hero-container {
+    padding-bottom: 20px;
+  }
+}
+
 .hero-title {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
   color: #242424;
   font-family: "DM Sans";
   font-size: 74px;
@@ -47,11 +49,12 @@
 }
 
 .sun-icon {
-  margin-right: 20px;
+  display: inline-block;
 }
 
 @media (max-width: 767.98px) {
   .sun-icon {
+    vertical-align: bottom;
     width: 38px;
     height: 38px;
     flex-shrink: 0;
@@ -82,6 +85,7 @@
 }
 
 p {
+  max-width: 528px;
   color: #242424;
   padding-top: 20px;
   font-family: "DM Sans";
@@ -96,7 +100,7 @@ p {
 @media (max-width: 767.98px) {
   p {
     color: #242424;
-
+    max-width: 335px;
     font-family: "DM Sans";
     font-size: 14px;
     font-style: normal;
@@ -110,17 +114,19 @@ p {
   display: flex;
   flex-direction: column;
   padding-bottom: 32px;
+  justify-content: flex-end;
 }
 
 .tags-list {
   display: flex;
-  width: 197px;
+  max-width: 210px;
   justify-content: flex-end;
   align-items: flex-start;
   align-content: flex-start;
   gap: 8px;
   flex-wrap: wrap;
   list-style: none;
+  padding-top: 32px;
 }
 
 .tags-list2 {
@@ -144,6 +150,14 @@ p {
 }
 
 .tag {
+  color: #242424;
+
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+
   display: flex;
   padding: 4px 16px;
   justify-content: center;
@@ -161,6 +175,11 @@ p {
     font-style: normal;
     font-weight: 400;
     line-height: 1.29;
+    display: flex;
+    padding: 4px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
   }
 }
 
