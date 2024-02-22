@@ -23,15 +23,14 @@
 }
 
 @media screen and (min-width: 768px) {
+  .modal {
+    padding: 40px;
+  }
+
   .button-close {
       right: 16px;
       top: 16px;
       width: 28px;
       height: 28px;
-    }
- }
-@media screen and (min-width: 1376px) {
-  .modal {
-    padding: 32px;
   }
 }

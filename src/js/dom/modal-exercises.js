@@ -1,45 +1,46 @@
 import spriteUrl from './../../images/svg/icons.svg';
 import { fetchExercise } from '../api/fetch-exercise';
 import Modal from '../helper/modal';
+import modalExerciseRating from './modal-exercise-rating';
 
-document.getElementById('open-modal').addEventListener('click', () => {
-  modalExercises('64f389465ae26083f39b17a5');
-});
+// document.getElementById('open-modal').addEventListener('click', () => {
+//   modalExercises('64f389465ae26083f39b17a5');
+// });
 
-export async function modalExercises(id, fn) {
-  const myModal = new Modal();
+export async function modalExercises(id) {
+  const modal = new Modal();
+
+  function favouritesButtonHandler(event) {
+    if (event.target.closest('.modal-exercises__button-favourites')) {
+      // handleClickFavoritesBtn(cardData);
+    }
+  }
+
+  function ratingButtonHandler(event) {
+    if (event.target.closest('.modal-exercises__button-rating')) {
+      modal.close()
+      modalExerciseRating(id);
+    }
+  }
 
   try {
     const cardData = await fetchExercise(id);
 
-    myModal.modalContent.innerHTML = '';
+    modal.setContent(createModalExercisesMarkup({
+      ...cardData,
+      rating: Number(cardData.rating).toFixed(1),
+    }));
 
-    myModal.modalContent.insertAdjacentHTML(
-      'beforeend',
-      createModalExercisesMarkup({
-        ...cardData,
-        rating: Number(cardData.rating).toFixed(1),
-      })
-    );
-    myModal.open();
+    modal.addContentListener('click', favouritesButtonHandler)
+    modal.addContentListener('click', ratingButtonHandler)
 
-    myModal.modalContent.addEventListener('click', event => {
-      if (event.target.closest('.modal-exercises__button-favourites')) {
-        // handleClickFavoritesBtn(cardData);
-      }
-    });
-    myModal.modalContent.addEventListener('click', event => {
-      if (event.target.closest('.modal-exercises__button-rating')) {
-        myModal.close()
-        handleRatingCick(cardData._id);
-      }
-    });
+    modal.open();
   } catch (error) {
     console.error(error);
   }
 }
 
-export function createModalExercisesMarkup(cardData) {
+function createModalExercisesMarkup(cardData) {
   const {
     name,
     burnedCalories,
@@ -89,7 +90,7 @@ export function createModalExercisesMarkup(cardData) {
         </div>
         <div class="modal-exercises__partials-item">
           <p class="modal-exercises__partials-title">Burned calories</p>
-          <p class="modal-exercises__partials-value">${burnedCalories}/${time} 
+          <p class="modal-exercises__partials-value">${burnedCalories}/${time}
             <span class="modal-exercises__partials-value_span">min</span>
           </p>
         </div>
@@ -100,7 +101,7 @@ export function createModalExercisesMarkup(cardData) {
       <div class="modal-exercises__buttons">
       ${
         false
-          ? `<button 
+          ? `<button
           type="button"
           class="modal-exercises__button-favourites unfavorite-btn"
           >
@@ -113,7 +114,7 @@ export function createModalExercisesMarkup(cardData) {
           >
             <use href=${spriteUrl}#icon-trash></use>
           </svg>`
-          : `<button 
+          : `<button
           type="button"
           class="modal-exercises__button-favourites
           add-to-favorites-btn">
@@ -134,8 +135,8 @@ export function createModalExercisesMarkup(cardData) {
     </div>`;
 }
 
-export function handleRatingCick(id) { 
-  
+export function handleRatingCick(id) {
+
 }
 
 // const exercisesListRef = document.getElementById('exercises-list-container');

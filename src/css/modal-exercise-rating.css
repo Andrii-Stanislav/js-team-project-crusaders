@@ -1,0 +1,153 @@
+.exercise-rating-form {
+  max-width: 295px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .exercise-rating-form {
+    gap: 32px;
+  }
+}
+
+.exercise-rating-form__star-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.exercise-rating-form__star-title {
+  color: var(--bg-color-40);
+  font-size: 12px;
+  font-weight: var(--font-weight-reg);
+  line-height: 1.5;
+}
+
+.exercise-rating-form__stars {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+  flex-direction: row-reverse;
+  gap: 2px;
+}
+
+.exercise-rating-form__star {
+  display: none;
+}
+
+.exercise-rating-form__star-label {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  fill: #F4F4F4;
+  opacity: 0.2;
+  transition: fill var(--trns-fast), opacity var(--trns-fast);
+}
+
+.exercise-rating-form__star:checked ~ .exercise-rating-form__star-label {
+  fill: #EEA10C;
+  opacity: 1;
+}
+
+.exercise-rating-form__star:not(:checked) ~ .exercise-rating-form__star-label:hover,
+.exercise-rating-form__star:not(:checked) ~ .exercise-rating-form__star-label:hover ~ .exercise-rating-form__star-label {
+  fill: #EEA10C;
+  opacity: 1;
+}
+
+.exercise-rating-form__star-counter {
+  color: var(--bg-color);
+  font-size: 12px;
+  font-weight: var(--font-weight-reg);
+  line-height: 1.5;
+}
+
+.exercise-rating-form__star-counter:before {
+  content: "0.0";
+  transition: content var(--trns-fast);
+}
+
+#rating-1:checked ~ .exercise-rating-form__star-counter:before,
+#rating-1:hover ~ .exercise-rating-form__star-counter:before {
+  content: "1.0";
+}
+
+#rating-2:checked ~ .exercise-rating-form__star-counter:before,
+#rating-2:hover ~ .exercise-rating-form__star-counter:before {
+  content: "2.0";
+}
+
+#rating-3:checked ~ .exercise-rating-form__star-counter:before,
+#rating-3:hover ~ .exercise-rating-form__star-counter:before {
+  content: "3.0";
+}
+
+#rating-4:checked ~ .exercise-rating-form__star-counter:before,
+#rating-4:hover ~ .exercise-rating-form__star-counter:before {
+  content: "4.0";
+}
+
+#rating-5:checked ~ .exercise-rating-form__star-counter:before,
+#rating-5:hover ~ .exercise-rating-form__star-counter:before {
+  content: "5.0";
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-input,
+.form-textarea {
+  padding: 12px 14px;
+  border-radius: 30px;
+  border: 1px solid var(--bg-color);
+  background-color: inherit;
+
+  color: var(--bg-color);
+  font-weight: var(--font-weight-reg);
+  font-size: 14px;
+  line-height: 1.28;
+
+  transition: border var(--trns-fast), outline var(--trns-fast);
+}
+
+.form-textarea {
+  border-radius: 15px;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border: 2px solid var(--bg-color);
+  outline: none;
+}
+
+.exercise-rating-form-button {
+  display: flex;
+  padding: 12px 131px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  border: none;
+  border-radius: 30px;
+  background-color: var(--bg-color);
+
+  color: var(--primary-dark);
+  font-size: 14px;
+  font-weight: var(--font-weight-reg);
+  line-height: 1.28;
+
+  transition: border var(--trns-fast), background-color var(--trns-fast), color var(--trns-fast);
+}
+
+.exercise-rating-form-button:hover,
+.exercise-rating-form-button:focus{
+  border: 1px solid var(--bg-color);
+  background-color: var(--primary-dark);
+
+  color: var(--bg-color);
+}
