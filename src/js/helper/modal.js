@@ -33,15 +33,17 @@ export default class Modal {
     this.#modal.showModal();
   }
 
-  close() {
+  close(executeCallback = true) {
     this.#closeBtn.removeEventListener('click', this.handleCloseButtonClick);
     this.#modal.removeEventListener('click', this.handleModalClick);
 
     this.#contentEventListeners.forEach(
       ({type, lister}) => this.#modalContent.removeEventListener(type, lister),
     );
-
-    this.#onCloseCallback.forEach((callback) => callback());
+    
+    if (executeCallback ) {
+      this.#onCloseCallback.forEach(callback => callback());
+    }
 
     this.#modal.close();
   }
