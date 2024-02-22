@@ -1,6 +1,6 @@
 import { refs } from '../refs';
 
-import clearElement from '../dom/clear-element';
+import clearElement from '../helper/clear-element';
 
 // TODO - this value is null. Add element into html
 // Check user clicks on clear button in search

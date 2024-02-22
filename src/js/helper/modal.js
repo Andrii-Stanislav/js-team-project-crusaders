@@ -37,11 +37,11 @@ export default class Modal {
     this.#closeBtn.removeEventListener('click', this.handleCloseButtonClick);
     this.#modal.removeEventListener('click', this.handleModalClick);
 
-    this.#contentEventListeners.forEach(
-      ({type, lister}) => this.#modalContent.removeEventListener(type, lister),
+    this.#contentEventListeners.forEach(({ type, lister }) =>
+      this.#modalContent.removeEventListener(type, lister)
     );
 
-    this.#onCloseCallback.forEach((callback) => callback());
+    this.#onCloseCallback.forEach(callback => callback());
 
     this.#modal.close();
   }
@@ -52,7 +52,7 @@ export default class Modal {
   }
 
   addContentListener(type, lister) {
-    this.#contentEventListeners.push({type, lister});
+    this.#contentEventListeners.push({ type, lister });
 
     this.#modalContent.addEventListener(type, lister);
   }
