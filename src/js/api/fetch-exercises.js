@@ -1,6 +1,6 @@
 import { BASE_URL } from './config';
 
-export async function fetchExercises({page}) {
+export async function fetchExercises({ page }) {
   // TODO - describe all query params
   const URL = `${BASE_URL}/exercises?page=${page}`;
 

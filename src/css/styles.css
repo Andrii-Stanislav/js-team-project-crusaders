@@ -6,7 +6,7 @@
 */
 @import url('./reset.css');
 @import url('./base-ui.css');
-
+@import url('./hero.css');
 @import url('./header.css');
 @import url('./search.css');
 @import url('./exercises.css');
@@ -41,7 +41,6 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-
 .visually-hidden {
   position: absolute;
   width: 1px;
