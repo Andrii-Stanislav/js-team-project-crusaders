@@ -16,6 +16,7 @@
 
 @media only screen and (min-width: 1440px) {
   .quote-main {
+    max-width: 444px;
     grid-template-columns: repeat(1, 444px);
     justify-content: center;
   }

@@ -1,4 +1,4 @@
-import getExercises from '../api/get-exercises';
+import { getExercises } from '../api/get-exercises';
 
 import createExercisesMarkup from './create-exercises-markup';
 

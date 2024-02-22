@@ -1,8 +1,8 @@
-import { BASE_URL } from './config';
-import axios from 'axios';
+import { apiInstance } from './config';
 
-export function updateExerciseRating(id, rate, email, review) {
-  const URL = `${BASE_URL}/exercises/${id}/rating`;
-
-  return axios.patch(URL, { rate, email, review });
-}
+export const updateExerciseRating = (id, rate, email, review) =>
+  apiInstance.patch(`/exercises/${id}/rating`, {
+    rate,
+    email,
+    review,
+  });
