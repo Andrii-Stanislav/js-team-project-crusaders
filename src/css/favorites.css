@@ -1,13 +1,7 @@
 /* .exercises-list-container {
-    display: flex;
-    flex-wrap: wrap;
-    row-gap: 32px;
-    column-gap: 16px;
     overflow-y: scroll;
     overflow-x: hidden;
     height: 100vh;
-    max-height: 634px;
-    max-width: 844px;
     overflow-y: auto;
 }
 
@@ -22,8 +16,6 @@
     .exercises-list-container {
         max-height: 2200px;
         overflow-y: hidden;
-        row-gap: 20px;
-        
     }
 }
 
@@ -52,13 +44,4 @@
 
 .exercises-list-container::-webkit-scrollbar-thumb:hover {
     background: #555;
-    
 }
-
-.exercise-item {
-    max-width: 405px;
-}
-
-.exercise-top-container {
-    max-width: 405px;
-} */
