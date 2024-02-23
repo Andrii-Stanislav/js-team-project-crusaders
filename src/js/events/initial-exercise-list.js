@@ -20,7 +20,7 @@ export default async function initialExercisesList() {
 
   addText(refs.breadcrumbsText, group, refs.breadcrumbsDivider);
   // Render exercises list
-  renderExercisesList(refs.exercisesContainer, responseData);
+  renderExercisesList(refs.exercisesContainer, responseData.data.results);
 }
 
 initialExercisesList();

@@ -33,5 +33,5 @@ export default async function handleSearchSubmit(element) {
   });
 
   // Render exercises list
-  renderExercisesList(refs.exercisesContainer, responseData);
+  renderExercisesList(refs.exercisesContainer, responseData.data.results);
 }

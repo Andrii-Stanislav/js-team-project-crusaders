@@ -16,6 +16,6 @@ export default refs.searchClearButton.addEventListener('click', e => {
     group,
     keyword: '',
   }).then(responseData => {
-    renderExercisesList(refs.exercisesContainer, responseData);
+    renderExercisesList(refs.exercisesContainer, responseData.data.results);
   });
 });
