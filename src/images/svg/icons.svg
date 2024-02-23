@@ -27,5 +27,11 @@
   <symbol id="icon-trash" viewBox="0 0 32 32">
     <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.4" d="M21.333 8v-1.067c0-1.493 0-2.24-0.29-2.81-0.261-0.505-0.662-0.906-1.152-1.159l-0.015-0.007c-0.57-0.29-1.317-0.29-2.81-0.29h-2.134c-1.493 0-2.24 0-2.81 0.29-0.502 0.256-0.91 0.664-1.166 1.166-0.29 0.57-0.29 1.317-0.29 2.81v1.067M13.333 15.333v6.667M18.667 15.333v6.667M4 8h24M25.333 8v14.933c0 2.24 0 3.36-0.435 4.216-0.391 0.756-0.992 1.358-1.727 1.738l-0.022 0.011c-0.854 0.435-1.976 0.435-4.216 0.435h-5.866c-2.24 0-3.36 0-4.216-0.435-0.756-0.391-1.358-0.992-1.738-1.727l-0.011-0.022c-0.435-0.856-0.435-1.976-0.435-4.216v-14.933"></path>
   </symbol>
+  <symbol id="icon-menu" viewBox="0 0 32 32">
+    <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M28 13.333h-24"></path>
+    <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M28 8h-24"></path>
+    <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M28 18.667h-24"></path>
+    <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M28 24h-24"></path>
+  </symbol>
 </defs>
 </svg>

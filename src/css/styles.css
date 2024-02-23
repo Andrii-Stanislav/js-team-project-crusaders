@@ -12,6 +12,7 @@
 @import url('./search.css');
 @import url('./exercises.css');
 @import url('./breadcrumbs.css');
+@import url('./mobile-menu.css');
 @import url('./modal.css');
 @import url('./modal-exercise.css');
 @import url('./modal-exercise-rating.css');
@@ -20,7 +21,9 @@
 
 :root {
   --clear-white: #ffffff;
+  --light-white: #f6f6f6;
   --light-gray: #24242466;
+  --dark-gray: rgba(255, 255, 255, 0.8);
   --primary-dark: #242424;
   --bg-color: #f4f4f4;
   --bg-color-20: rgb(244, 244, 244, 0.2);
