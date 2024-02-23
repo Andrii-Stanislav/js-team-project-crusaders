@@ -84,7 +84,7 @@
   }
 }
 
-p {
+.hero-text {
   max-width: 528px;
   color: #242424;
   padding-top: 20px;
@@ -98,7 +98,7 @@ p {
 }
 
 @media (max-width: 767.98px) {
-  p {
+  .hero-text {
     color: #242424;
     max-width: 335px;
     font-family: "DM Sans";
