@@ -5,3 +5,4 @@ export * from './dom/mobile-menu';
 export * from './dom/quote';
 export * from './dom/modal-exercises';
 export * from './dom/footer';
+export * from './dom/header';
