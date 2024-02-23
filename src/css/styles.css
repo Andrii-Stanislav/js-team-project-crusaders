@@ -12,6 +12,7 @@
 @import url('./modal-exercise.css');
 @import url('./quote.css');
 @import url('./footer.css');
+@import url('./filters.css');
 
 :root {
     --primary-dark: #242424;
