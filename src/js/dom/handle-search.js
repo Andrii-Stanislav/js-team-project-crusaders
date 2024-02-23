@@ -1,10 +1,9 @@
-import { getExercises } from '../api/get-exercises';
-
-import createExercisesMarkup from './create-exercises-markup';
+import { getExercisesByKeyword } from '../api/get-exercises-by-keyword';
 
 import clearElement from '../helper/clear-element';
 
 import { refs } from '../refs';
+import renderExercisesList from './render-exercises-list';
 
 export default async function handleSearchSubmit(element, filter) {
   // Prevent page reload
@@ -29,8 +28,13 @@ export default async function handleSearchSubmit(element, filter) {
     return;
   }
 
-  const responseData = await getExercises(filter, searchInputValue);
+  const responseData = await getExercisesByKeyword(filter, searchInputValue);
+
+  if (!responseData.data.results.length || !responseData) {
+    // Clear input if nothing found
+    clearElement(refs.searchInputElement);
+  }
 
   // Render exercises list
-  createExercisesMarkup(refs.exercisesContainer, responseData);
+  renderExercisesList(element, responseData);
 }

@@ -1,25 +1,5 @@
-import { refs } from '../refs';
-
-import clearElement from '../helper/clear-element';
-
-export default function createExercisesMarkup(element, apiResponse) {
-  // Clear list in DOM before each request
-  element.innerHTML = '';
-  // Check if data received
-  if (!apiResponse) {
-    // Clear input if nothing found
-    clearElement(refs.searchInputElement);
-    // Insert message in UI
-    element.insertAdjacentHTML(
-      'afterbegin',
-      `<li class="list-item-error">
-        We haven't found exercises. Please try another search term"
-    </li>`
-    );
-    return;
-  }
-  // Create exercises list markup
-  const exercisesMarkup = apiResponse.results
+export default function createExercisesMarkup(data, isFavorite) {
+  return data
     .map(
       ({
         _id,
@@ -33,12 +13,22 @@ export default function createExercisesMarkup(element, apiResponse) {
     <div class="exercise-top-container">
       <div class="exercise-top-info">
         <p class="exercise-tag">Workout</p>
-        <p class="exercise-rating">
-          ${rating}
-          <svg class="rating-icon">
-            <use href="images/svg/icons.svg#icon-star-yellow"></use>
-          </svg>
-        </p>
+        <div class="exercise-custom-block">
+        ${
+          isFavorite
+            ? `<button class="exercise-button-delete">
+              <svg class="trash-icon">
+                <use href="images/svg/icons.svg#icon-trash"></use>
+              </svg>
+            </button>`
+            : `<p class="exercise-rating">
+              ${rating}
+              <svg class="rating-icon">
+                <use href="images/svg/icons.svg#icon-star-yellow"></use>
+              </svg>
+            </p>`
+        }
+        </div>
       </div>
       <button type="menu" class="exercise-start-button">
         Start
@@ -69,7 +59,4 @@ export default function createExercisesMarkup(element, apiResponse) {
   </li>`
     )
     .join('');
-
-  // Insert list after the container open tag
-  element.insertAdjacentHTML('afterbegin', exercisesMarkup);
 }

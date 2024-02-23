@@ -4,6 +4,7 @@ export * from './dom/favorites';
 export * from './dom/quote';
 export * from './dom/modal-exercises';
 export * from './dom/footer';
+export * from './dom/render-exercises-list';
 
 export * from './events/clear-search';
 export * from './events/submit-search';
