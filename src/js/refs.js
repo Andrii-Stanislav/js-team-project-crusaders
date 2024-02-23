@@ -4,6 +4,13 @@ export const refs = {
   quoteElement: document.querySelector('.quote-text'),
   authorElement: document.querySelector('.quote-author'),
   quoteCard: document.querySelector('.quote-card'),
+  // exercises filters
+  exercisesFiltersList: document.querySelector('.js-exercises-filters-list'),
+  exercisesFiltersTabs: document.getElementById('exercises-filters-tabs'),
+  exercisesFiltersTabsList: document.querySelectorAll('.exercises-filters-tab'),
+  exercisesFiltersPagination: document.getElementById(
+    'exercises-filters-pagination'
+  ),
   // exercises search
   searchInputElement: document.querySelector('.search-input'),
   searchClearButton: document.querySelector('.button-clear'),
