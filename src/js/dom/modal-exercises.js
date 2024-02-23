@@ -43,14 +43,14 @@ export async function modalExercises(id) {
       )
     );
     updateRatingStar(Number(cardData.rating).toFixed(1));
-    
+
 
     modal.addContentListener('click', favouritesButtonHandler);
     modal.addContentListener('click', ratingButtonHandler)
 
     modal.open();
-  } catch (error) {
-    console.error(error);
+  } catch (e) {
+    // do nothing
   }
 }
 
@@ -189,7 +189,7 @@ export const handleClickFavoritesBtn = cardData => {
 
     return;
   }
-  
+
   favoritesStorage.remove(cardData._id);
 
   favoriteButton.innerHTML = `Add to favorites

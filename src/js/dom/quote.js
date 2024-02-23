@@ -8,11 +8,15 @@ async function updateQuoteDisplay() {
   let currentQuote = getQuote();
 
   if (!currentQuote || currentQuote.date !== today) {
-    const { data } = await fetchQuote();
+    try {
+      const { data } = await fetchQuote();
 
-    if (data) {
-      currentQuote = { date: today, quote: data.quote, author: data.author };
-      setQuote(today, data.quote, data.author);
+      if (data) {
+        currentQuote = { date: today, quote: data.quote, author: data.author };
+        setQuote(today, data.quote, data.author);
+      }
+    } catch (e) {
+      // do nothing
     }
   }
 

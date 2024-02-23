@@ -123,11 +123,7 @@ export default function modalExerciseRating(exerciseId) {
 
         modal.close();
       } catch (error) {
-        if (error.response) {
-          console.error('Validation error:', error.response.data.message);
-        } else {
-          console.error('Error during request setup:', error.message);
-        }
+        // do nothing
       }
     }
   }
