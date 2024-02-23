@@ -16,19 +16,32 @@
   </head>
 
   <body>
-    <a href="./favorites.html"> to favorit test delete later </a>
-
     <load src="partials/header.html" />
     <load src="partials/hero.html" />
 
     <main>
+      <div class="container filters-and-search">
+        <div>
+          <h2 class="exersices__title">Exercises</h2>
+        </div>
+
+        <div class="filters-and-search-block">
+          <load src="./partials/search.html" />
+
+          <load src="./partials/filter_exersices.html" />
+        </div>
+      </div>
+
       <div class="container main-content">
         <div class="main-quote">
           <load src="./partials/quote.html" />
         </div>
 
         <div class="main-exercises">
-          <div style="color: black">Lists</div>
+          <div>
+            List
+            <!-- <load src="./partials/fetch_exersices.html" /> -->
+          </div>
         </div>
       </div>
     </main>

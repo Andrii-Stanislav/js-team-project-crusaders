@@ -4,6 +4,8 @@ export const refs = {
   quoteElement: document.querySelector('.quote-text'),
   authorElement: document.querySelector('.quote-author'),
   quoteCard: document.querySelector('.quote-card'),
+  // exercises filters
+
   // exercises search
   searchInputElement: document.querySelector('.search-input'),
   searchClearButton: document.querySelector('.button-clear'),
