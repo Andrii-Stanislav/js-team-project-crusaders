@@ -4,6 +4,4 @@ export default function clearElement(element) {
     element.value = '';
     return;
   }
-  // Show error if function didn't receive input element
-  console.error('function clearElement:', 'Only works with input elements');
 }
