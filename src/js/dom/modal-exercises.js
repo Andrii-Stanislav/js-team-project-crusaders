@@ -5,9 +5,9 @@ import modalExerciseRating from './modal-exercise-rating';
 import { updateRatingStar } from '../helper/update-rating';
 import { favoritesStorage } from './../storage/favorites'
 
-document.getElementById('open-modal').addEventListener('click', () => {
-  modalExercises('64f389465ae26083f39b17a5');
-});
+// document.getElementById('open-modal').addEventListener('click', () => {
+//   modalExercises('64f389465ae26083f39b17a5');
+// });
 
 
 
