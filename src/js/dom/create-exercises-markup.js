@@ -30,7 +30,7 @@ export default function createExercisesMarkup(data, isFavorite) {
         }
         </div>
       </div>
-      <button type="menu" class="exercise-start-button">
+      <button type="menu" class="exercise-start-button" data-id="${_id}">
         Start
         <svg class="button-icon icon-arrow">
           <use href="images/svg/icons.svg#icon-arrow"></use>

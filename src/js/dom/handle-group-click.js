@@ -8,5 +8,5 @@ export default async function handleGroupClick(container, filter, group) {
 
   addText(refs.breadcrumbsText, group, refs.breadcrumbsDivider);
   // Render exercises list
-  renderExercisesList(container, responseData);
+  renderExercisesList(container, responseData.data.results);
 }
