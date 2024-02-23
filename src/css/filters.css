@@ -262,6 +262,22 @@
 }
 
 .pagination-button {
+    width: 32px;
+    height: 32px;
+    display: block;
     border-radius: 50%;
     border-color: var(--primary-dark);
+    color: var(--primary-dark);
+    background-color: transparent;
+}
+
+.pagination-button:not(.active-btn) {
+    border-color: transparent;
+    color: #d4d4d4;
+}
+
+#pagination-numbers {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
 }
