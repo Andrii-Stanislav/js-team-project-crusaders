@@ -1,4 +1,4 @@
 import { apiInstance } from './config';
 
-export const getFilter = ({ page, filter }) =>
+export const fetchFilters = ({ page, filter }) =>
   apiInstance.get(`/filters?page=${page}&filter=${filter}`);

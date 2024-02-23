@@ -1,28 +1,57 @@
-import { getFilter } from '../api/fetch-filters';
+import Pagination from 'tui-pagination';
 
-const listItem = document.querySelector('.js-list');
-const paginationButtons = document.getElementById('pagination-numbers');
-let currentPage = 1;
-let param = 'Muscles';
+import { fetchFilters } from '../api/fetch-filters';
+import { filtersService } from '../storage/filters';
+import { refs } from '../refs';
 
-getFiltersExercises(param, currentPage);
+const initPage = filtersService.exercisesFiltersTable.getPage();
+const initFilter = filtersService.exercisesFilters.get();
 
-async function getFiltersExercises(param, currentPage) {
-  try {
-    const { results, totalPages } = await getFilter(param, currentPage);
+// initial fetch and setup pagination
+getInitFiltersExercises({ page: initPage, filter: initFilter });
 
-    setupPagination({ results, totalPages });
-    displayExercises(results);
-  } catch (error) {
-    console.log(error);
+// set initFilter;
+refs.exercisesFiltersTabsList.forEach(elem => {
+  const textContent = elem.textContent.trim();
+  if (textContent === initFilter) {
+    elem.classList.add('active');
   }
+});
+
+function getInitFiltersExercises({ page, filter }) {
+  fetchFilters({ page, filter }).then(
+    ({ data: { results, page, perPage, totalPages } }) => {
+      const pagination = new Pagination('exercises-filters-pagination', {
+        page: Number(page),
+        itemsPerPage: perPage,
+        totalItems: totalPages * perPage,
+      });
+
+      pagination.on('beforeMove', function (eventData) {
+        const currentFilter = filtersService.exercisesFilters.get();
+
+        getFiltersExercisesForNewPage(currentFilter, eventData.page);
+        filtersService.exercisesFiltersTable.setPage(eventData.page);
+      });
+
+      displayExercises(results);
+    }
+  );
+}
+
+function getFiltersExercisesForNewPage(filter, page) {
+  fetchFilters({ page, filter }).then(({ data }) => {
+    displayExercises(data.results);
+    scrollToTop();
+  });
 }
 
 function displayExercises(results) {
-  listItem.innerHTML = '';
+  refs.exercisesFiltersList.innerHTML = '';
+
   const markup = results
-    .map(({ filter, name, imgURL }) => {
-      return `
+    .map(
+      ({ filter, name, imgURL }) => `
   <li class="filters__item">
     <img class="filters__img-first" src="${imgURL}"></img>
     <div class="filters__wrapper-first">
@@ -30,62 +59,30 @@ function displayExercises(results) {
     <p class="filters__text-first">${name}</p>
     </div>
   </li>
-    `;
-    })
+    `
+    )
     .join('');
 
-  listItem.insertAdjacentHTML('beforeend', markup);
+  refs.exercisesFiltersList.insertAdjacentHTML('beforeend', markup);
 }
 
-const filtersList = document.querySelector('.exersices__list');
-filtersList.addEventListener('click', event => {
-  document.querySelectorAll('.btnFilters').forEach(elem => {
+// filter tabs logic
+
+refs.exercisesFiltersTabs.addEventListener('click', event => {
+  refs.exercisesFiltersTabsList.forEach(elem => {
     elem.classList.remove('active');
   });
 
   event.target.classList.add('active');
-  param = event.target.textContent.trim();
-  listItem.innerHTML = '';
-  currentPage = 1;
-  getFiltersExercises(param, currentPage);
+
+  const newFilter = event.target.textContent.trim();
+  refs.exercisesFiltersList.innerHTML = '';
+
+  filtersService.exercisesFilters.set(newFilter);
+  filtersService.exercisesFiltersTable.setPage(1);
+
+  getInitFiltersExercises({ page: 1, filter: newFilter });
 });
-
-function setupPagination({ results, totalPages }) {
-  paginationButtons.innerHTML = '';
-
-  if (totalPages <= 1) return;
-
-  const param = results[0].filter;
-
-  for (let i = 1; i <= totalPages; i++) {
-    const pageNumber = document.createElement('button');
-    pageNumber.className = 'pagination-button';
-    pageNumber.textContent = i;
-
-    paginationButtons.appendChild(pageNumber);
-
-    pageNumber.addEventListener('click', () => {
-      setCurrentPage(param, i);
-    });
-  }
-  handleActivePageNumber();
-}
-
-async function setCurrentPage(param, i) {
-  currentPage = i;
-  await getFilter(param, currentPage);
-  handleActivePageNumber();
-  scrollToTop();
-}
-
-const handleActivePageNumber = () => {
-  document.querySelectorAll('.pagination-button').forEach((button, page) => {
-    button.classList.remove('active-btn');
-    if (page + 1 === currentPage) {
-      button.classList.add('active-btn');
-    }
-  });
-};
 
 function scrollToTop() {
   window.scrollTo({
