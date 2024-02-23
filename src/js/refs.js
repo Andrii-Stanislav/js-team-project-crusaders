@@ -20,7 +20,7 @@ export const refs = {
   breadcrumbsText: document.querySelector('.breadcrumbs-subtitle'),
   breadcrumbsDivider: document.querySelector('.breadcrumbs-divider'),
   // favorites
-  containerFavorites: document.querySelector('.exercises-list-container'),
+  containerFavorites: document.querySelector('.favorites-exercises-list'),
   // footer
   footerEmailInput: document.getElementById('mailing-email'),
   footerSubscribeForm: document.querySelector('.js-footer-newsletter-form'),
