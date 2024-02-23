@@ -5,6 +5,7 @@ export * from './dom/mobile-menu.js';
 export * from './dom/quote';
 export * from './dom/modal-exercises';
 export * from './dom/footer';
+export * from './dom/header.js';
 
 export * from './events/clear-search';
 export * from './events/submit-search';
