@@ -1,16 +1,8 @@
-import { refs } from '../refs';
 import { favoritesStorage } from '../storage/favorites';
+import { fetchExercise } from '../api/fetch-exercise';
+import createExercisesMarkup from './create-exercises-markup';
 
-const ADD_TO_FAVORITES_BUTTON_CLASS = 'addToFavoritesButton';
+const favoriteExercises = favoritesStorage.getAll();
 
-refs.body.addEventListener('click', e => {
-  if (
-    Array.from(e.target?.classList)?.includes(ADD_TO_FAVORITES_BUTTON_CLASS) &&
-    e.target?.dataset?.info
-  ) {
-    favoritesStorage.add(e.target.dataset.info);
-  }
-});
-
-// TODO before saving data to html data-info replaceAll all single quotes
-// 'JSON.stringify(item).replaceAll("'", '&apos;')'
+const containerFavorites = document.querySelector('.exercises-list-container');
+createExercisesMarkup(containerFavorites, { results: favoriteExercises });
