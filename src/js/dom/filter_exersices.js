@@ -57,10 +57,10 @@ function displayExercises(results) {
 
       return `
   <li class="filters__item" ${dataFilter} ${dataGroupName}>
-    <img class="filters__img-first" src="${imgURL}"  ${dataFilter}></img>
-    <div class="filters__wrapper-first" ${dataFilter}>
-    <h2 class="filters__title-first" ${dataFilter}>${name}</h2>
-    <p class="filters__text-first" ${dataFilter}>${filter}</p>
+    <img class="filters__img-first" src="${imgURL}"  ${dataFilter} ${dataGroupName}></img>
+    <div class="filters__wrapper-first" ${dataFilter}${dataGroupName}>
+    <h2 class="filters__title-first" ${dataFilter} ${dataGroupName}>${name}</h2>
+    <p class="filters__text-first" ${dataFilter} ${dataGroupName}>${filter}</p>
     </div>
   </li>
     `;
