@@ -19,7 +19,11 @@ export const refs = {
   exercisesContainer: document.querySelector('.exercises-container'),
   breadcrumbsText: document.querySelector('.breadcrumbs-subtitle'),
   breadcrumbsDivider: document.querySelector('.breadcrumbs-divider'),
+  // favorites
+  containerFavorites: document.querySelector('.favorites-exercises-list'),
   // footer
   footerEmailInput: document.getElementById('mailing-email'),
   footerSubscribeForm: document.querySelector('.js-footer-newsletter-form'),
+  // header
+  listItems: document.querySelectorAll('.nav-list-item'),
 };

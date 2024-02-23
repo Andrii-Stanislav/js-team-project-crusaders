@@ -18,7 +18,9 @@
 @import url('./modal.css');
 @import url('./modal-exercise.css');
 @import url('./modal-exercise-rating.css');
+@import url('./favorites.css');
 @import url('./quote.css');
+@import url('./static-pages.css');
 @import url('./footer.css');
 
 :root {

@@ -82,33 +82,31 @@
     letter-spacing: -0.02em;
   }
 }
-/* Change to class
-p {
+
+.hero-text {
   max-width: 528px;
   color: #242424;
   padding-top: 20px;
-  font-family: "DM Sans";
+  font-family: 'DM Sans';
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: 1.33;
   letter-spacing: -0.02em;
-
 }
 
 @media (max-width: 767.98px) {
-  p {
+  .hero-text {
     color: #242424;
     max-width: 335px;
-    font-family: "DM Sans";
+    font-family: 'DM Sans';
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: 1.29;
     letter-spacing: -0.02em;
   }
-} */
-
+}
 .hero-hashtags {
   display: flex;
   flex-direction: column;
