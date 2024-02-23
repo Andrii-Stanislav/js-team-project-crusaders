@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Favorites</title>
@@ -15,9 +16,24 @@
   </head>
 
   <body>
-    <load ="partials/header.html" />
-    <load ="partials/hero.html" />
+    <load src="partials/header.html" />
 
-    <script type="module" src="./main.js"></script>
+    <main>
+      <div class="container main-favorites-content">
+        <div class="main-favorites-quote">
+          <load src="./partials/quote-fav.html" />
+        </div>
+
+        <div class="main-favorites-exercises">
+          <div>
+            <load src="./partials/favorites-exercises.html" />
+          </div>
+        </div>
+      </div>
+    </main>
+    <load src="partials/mobile-menu.html" />
+    <load src="partials/footer.html" />
+
+    <script type="module" src="./favorites.js"></script>
   </body>
 </html>
