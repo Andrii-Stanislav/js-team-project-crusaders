@@ -1,7 +1,7 @@
 .exercises-container {
   display: flex;
   flex-wrap: wrap;
-  row-gap: 32px;
+  row-gap: 20px;
   column-gap: 16px;
 }
 
@@ -14,6 +14,7 @@
 
 .exercise-top-container {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   margin-bottom: 25px;
   font-size: 12px;
@@ -60,6 +61,23 @@
   height: 24px;
 }
 
+.exercise-custom-block {
+  display: flex;
+}
+
+.exercise-button-delete {
+  background-color: unset;
+  border: none;
+  padding: 0;
+}
+
+.trash-icon {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: var(--primary-dark);
+}
+
 .icon-arrow {
   width: 13px;
   height: 13px;
@@ -92,6 +110,14 @@
   line-height: 1.33;
 }
 
+/* Truncate text */
+.exercise-title,
+.exercise-info {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .exercise-title::first-letter {
   text-transform: capitalize;
 }
@@ -117,6 +143,10 @@
 }
 
 @media screen and (min-width: 768px) {
+  .exercises-container {
+    row-gap: 32px;
+  }
+
   .exercise-item {
     width: calc((100% - 16px) / 2);
   }

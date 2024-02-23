@@ -1,5 +1,6 @@
 const CURRENT_EXERCISES_FILTER_PAGE = 'current-exercises-filter-page';
 const CURRENT_EXERCISES_FILTER_KEYWORD = 'current-exercises-filter-keyword';
+const CURRENT_EXERCISES_GROUP_NAME = 'current-exercises-group-name';
 const IS_OPENED_EXERCISES_LIST = 'is-opened-exercises-list';
 
 export const filtersService = {
@@ -21,6 +22,15 @@ export const filtersService = {
       return (
         sessionStorage.getItem(CURRENT_EXERCISES_FILTER_KEYWORD) ?? 'Muscles'
       );
+    },
+  },
+
+  exercisesGroups: {
+    set: name => {
+      sessionStorage.setItem(CURRENT_EXERCISES_GROUP_NAME, name);
+    },
+    get: () => {
+      return sessionStorage.getItem(CURRENT_EXERCISES_GROUP_NAME) ?? '';
     },
   },
 
