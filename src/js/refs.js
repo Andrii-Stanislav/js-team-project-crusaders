@@ -24,4 +24,6 @@ export const refs = {
   // footer
   footerEmailInput: document.getElementById('mailing-email'),
   footerSubscribeForm: document.querySelector('.js-footer-newsletter-form'),
+  // header
+  listItems: document.querySelectorAll('.nav-list-item'),
 };
