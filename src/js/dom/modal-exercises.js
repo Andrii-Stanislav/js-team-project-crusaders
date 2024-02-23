@@ -43,9 +43,7 @@ export async function modalExercises(id) {
     modal.addContentListener('click', ratingButtonHandler);
 
     modal.open();
-  } catch (error) {
-    console.error(error);
-  }
+  } catch (error) {}
 }
 
 function createModalExercisesMarkup(cardData, isFavorite) {

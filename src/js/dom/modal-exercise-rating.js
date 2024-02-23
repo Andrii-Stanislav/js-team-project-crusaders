@@ -98,14 +98,14 @@ const getMarkup = () => {
       <button class="exercise-rating-form-button" type="submit">Send</button>
     </form>
   `;
-}
+};
 
 export default function modalExerciseRating(exerciseId) {
   const modal = new Modal();
 
   modal.addOnCloseCallback(() => modalExercises(exerciseId));
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async event => {
     if (event.target.closest('.exercise-rating-form')) {
       event.preventDefault();
 
@@ -119,18 +119,12 @@ export default function modalExerciseRating(exerciseId) {
           rateNumber,
           email.value,
           comment.value
-        )
+        );
 
         modal.close();
-      } catch (error) {
-        if (error.response) {
-          console.error('Validation error:', error.response.data.message);
-        } else {
-          console.error('Error during request setup:', error.message);
-        }
-      }
+      } catch (error) {}
     }
-  }
+  };
 
   modal.setContent(getMarkup());
   modal.addContentListener('submit', handleSubmit);

@@ -16,11 +16,6 @@ export default async function handleSearchSubmit(element) {
     filter = filter.slice(0, -1);
   }
   group = group.toLowerCase();
-  // Show error message if filter are not configured
-  if (!filter && !group) {
-    console.error('Filter are not configured');
-    return;
-  }
 
   // Clear spaces and capital letters from user input
   const keyword =
