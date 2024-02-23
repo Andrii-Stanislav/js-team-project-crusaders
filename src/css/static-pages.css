@@ -1,0 +1,9 @@
+.policy-container {
+  padding-top: 24px;
+  padding-bottom: 64px
+}
+
+.policy-text p{
+  max-width: none;
+  padding-bottom: 20px;
+}
