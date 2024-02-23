@@ -13,20 +13,90 @@
       rel="stylesheet"
     />
     
-    <script type="module" crossorigin src="/js-team-project-crusaders/assets/vendor-8cce9181.js"></script>
-    <script type="module" crossorigin src="/js-team-project-crusaders/assets/main-0026a26d.js"></script>
-    <link rel="stylesheet" href="/js-team-project-crusaders/assets/main-49fcf6ec.css">
-    <link rel="stylesheet" href="/js-team-project-crusaders/assets/vendor-e5212ee8.css">
+    <script type="module" crossorigin src="/js-team-project-crusaders/assets/vendor-0462b126.js"></script>
+    <script type="module" crossorigin src="/js-team-project-crusaders/assets/main-ba7c0fda.js"></script>
+    <link rel="stylesheet" href="/js-team-project-crusaders/assets/main-334d1fab.css">
+    <link rel="stylesheet" href="/js-team-project-crusaders/assets/vendor-a18337f1.css">
   </head>
 
   <body>
-    <a href="./favorites.html"> to favorit test delete later </a>
-
     <header class="header">
-  <!-- 
-   -->
-</header>
+  <div class="container header-box">
+    <a href="../index.html" class="brand-logo-header">
+      <svg width="132" height="24">
+        <use href="/js-team-project-crusaders/assets/sprite-footer-icons-308b0811.svg#icon-logo-white"></use>
+      </svg>
+    </a>
 
+    <nav class="nav-menu">
+      <ul class="list nav-list">
+        <li class="item nav-selected">
+          <a class="link nav-link" href="../index.html">Home</a>
+        </li>
+
+        <li class="item">
+          <a class="link nav-link" href="../favorites.html">Favorites</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="header-networks">
+      <ul class="list header-networks-list">
+        <li class="item">
+          <a
+            class="link networks-link"
+            target="_blank"
+            rel="noreferrer noopener"
+            href="https://www.facebook.com/goITclub/"
+            aria-label="Facebook GoIT page link"
+          >
+            <svg width="24" height="24">
+              <use href="/js-team-project-crusaders/assets/sprite-footer-icons-308b0811.svg#icon-facebook-white"></use>
+            </svg>
+          </a>
+        </li>
+
+        <li class="item">
+          <a
+            class="link networks-link"
+            target="_blank"
+            rel="noreferrer noopener"
+            href="https://www.instagram.com/goitclub/"
+            aria-label="Instagram GoIT page link"
+          >
+            <svg width="24" height="24">
+              <use href="/js-team-project-crusaders/assets/sprite-footer-icons-308b0811.svg#icon-instagram-white"></use>
+            </svg>
+          </a>
+        </li>
+
+        <li class="item">
+          <a
+            class="link networks-link"
+            target="_blank"
+            rel="noreferrer noopener"
+            href="https://www.youtube.com/c/GoIT"
+            aria-label="Youtube GoIT chanel link"
+          >
+            <svg width="24" height="24">
+              <use href="/js-team-project-crusaders/assets/sprite-footer-icons-308b0811.svg#icon-youtube-white"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <button
+      class="mobile-menu-button"
+      data-menu-open
+      aria-label="Mobile menu button"
+    >
+      <svg width="32" height="32">
+        <use href="/js-team-project-crusaders/assets/icons-1f8f9d65.svg#icon-menu"></use>
+      </svg>
+    </button>
+  </div>
+</header>
 
     <section class="hero">
   <div class="container">
@@ -63,6 +133,61 @@
 </section>
 
     <main>
+      <div class="container filters-and-search">
+        <div>
+          <h2 class="exersices__title">Exercises</h2>
+        </div>
+
+        <div class="filters-and-search-block">
+          <form id="search-form" class="search-form" role="search">
+  <label class="visually-hidden" for="search-input">Search</label>
+  <input
+    class="search-input"
+    id="search-input"
+    type="search"
+    name="search"
+    placeholder="Search"
+    autocomplete="off"
+    required
+  />
+  <button class="search-form-buttons button-clear" type="button">
+    <p class="visually-hidden">Clear search input</p>
+    <svg class="button-icon icon-clear">
+      <use href="/js-team-project-crusaders/assets/icons-1f8f9d65.svg#icon-cross"></use>
+    </svg>
+  </button>
+  <button class="search-form-buttons button-submit" type="submit">
+    <p class="visually-hidden">Search</p>
+    <svg class="button-icon icon-search">
+      <use href="/js-team-project-crusaders/assets/icons-1f8f9d65.svg#icon-search"></use>
+    </svg>
+  </button>
+</form>
+
+
+          <section>
+  <ul id="exercises-filters-tabs" class="exersices__list">
+    <li>
+      <button class="exercises__btn exercises-filters-tab" type="button">
+        Muscles
+      </button>
+    </li>
+    <li>
+      <button class="exercises__btn exercises-filters-tab" type="button">
+        Body parts
+      </button>
+    </li>
+    <li>
+      <button class="exercises__btn exercises-filters-tab" type="button">
+        Equipment
+      </button>
+    </li>
+  </ul>
+</section>
+
+        </div>
+      </div>
+
       <div class="container main-content">
         <div class="main-quote">
           <section class="quote">
@@ -120,7 +245,15 @@
         </div>
 
         <div class="main-exercises">
-          <div style="color: black">Lists</div>
+          <div>
+            <div class="filters__container">
+  <ul class="filters__list js-exercises-filters-list"></ul>
+  <div id="exercises-filters-pagination" class="tui-pagination"></div>
+</div>
+
+            <ul class="exercises-container"></ul>
+
+          </div>
         </div>
       </div>
     </main>
@@ -128,12 +261,83 @@
     <dialog id="modalDialog" class="modal">
   <button type="button" class="button-close">
     <svg class="button-icon" width="12" height="12">
-      <use href=/js-team-project-crusaders/assets/icons-fad6f31f.svg#icon-button-close></use>
+      <use href=/js-team-project-crusaders/assets/icons-1f8f9d65.svg#icon-button-close></use>
     </svg>
   </button>
   <div id="modal-content"></div>
 </dialog>
 
+    <div class="mobile-menu-backdrop" data-menu-backdrop>
+  <div class="mobile-menu-box">
+    <button
+      type="button"
+      class="close-modal"
+      data-menu-close
+      aria-label="Close mobile menu button"
+    >
+      <svg class="close-svg" width="16px" height="16px">
+        <use href="/js-team-project-crusaders/assets/icons-1f8f9d65.svg#icon-cross"></use>
+      </svg>
+    </button>
+
+    <nav class="menu">
+      <ul class="list mobile-nav" data-menu-nav-links>
+        <li class="item">
+          <a class="link menu-nav-link" href="../index.html">Home</a>
+        </li>
+        <li class="item">
+          <a class="link menu-nav-link" href="../favorites.html">Favorites</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="menu-networks">
+      <ul class="list menu-networks-list">
+        <li class="item">
+          <a
+            class="link menu-networks-link"
+            target="_blank"
+            rel="noreferrer noopener"
+            href="https://www.facebook.com/goITclub/"
+            aria-label="Facebook GoIT page link"
+          >
+            <svg width="24" height="24">
+              <use href="/js-team-project-crusaders/assets/sprite-footer-icons-308b0811.svg#icon-facebook-white"></use>
+            </svg>
+          </a>
+        </li>
+
+        <li class="item">
+          <a
+            class="link menu-networks-link"
+            target="_blank"
+            rel="noreferrer noopener"
+            href="https://www.instagram.com/goitclub/"
+            aria-label="Instagram GoIT page link"
+          >
+            <svg width="24" height="24">
+              <use href="/js-team-project-crusaders/assets/sprite-footer-icons-308b0811.svg#icon-instagram-white"></use>
+            </svg>
+          </a>
+        </li>
+
+        <li class="item">
+          <a
+            class="link menu-networks-link"
+            target="_blank"
+            rel="noreferrer noopener"
+            href="https://www.youtube.com/c/GoIT"
+            aria-label="Youtube GoIT chanel link"
+          >
+            <svg width="24" height="24">
+              <use href="/js-team-project-crusaders/assets/sprite-footer-icons-308b0811.svg#icon-youtube-white"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
     <footer class="footer">
   <div class="footer-container">
