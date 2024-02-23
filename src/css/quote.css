@@ -23,7 +23,7 @@
 
 @media screen and (min-width: 1440px) {
   .quote {
-    max-width: 444px;
+    width: 444px;
   }
 
   .quote-fav {
