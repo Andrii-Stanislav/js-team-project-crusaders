@@ -3,13 +3,7 @@ import { fetchExercise } from '../api/fetch-exercise';
 import Modal from '../helper/modal';
 import modalExerciseRating from './modal-exercise-rating';
 import { updateRatingStar } from '../helper/update-rating';
-import { favoritesStorage } from './../storage/favorites'
-
-// document.getElementById('open-modal').addEventListener('click', () => {
-//   modalExercises('64f389465ae26083f39b17a5');
-// });
-
-
+import { favoritesStorage } from './../storage/favorites';
 
 export async function modalExercises(id) {
   const modal = new Modal();
@@ -23,13 +17,14 @@ export async function modalExercises(id) {
 
   function ratingButtonHandler(event) {
     if (event.target.closest('.modal-exercises__button-rating')) {
-      modal.close(false)
+      modal.close(false);
       modalExerciseRating(id);
     }
   }
 
   try {
-    cardData = await fetchExercise(id);
+    const { data } = await fetchExercise(id);
+    cardData = data;
 
     const isFavoriteCard = favoritesStorage.isFavorite(cardData._id);
 
@@ -43,15 +38,12 @@ export async function modalExercises(id) {
       )
     );
     updateRatingStar(Number(cardData.rating).toFixed(1));
-    
 
     modal.addContentListener('click', favouritesButtonHandler);
-    modal.addContentListener('click', ratingButtonHandler)
+    modal.addContentListener('click', ratingButtonHandler);
 
     modal.open();
-  } catch (error) {
-    console.error(error);
-  }
+  } catch (error) {}
 }
 
 function createModalExercisesMarkup(cardData, isFavorite) {
@@ -149,30 +141,11 @@ function createModalExercisesMarkup(cardData, isFavorite) {
     </div>`;
 }
 
-// const exercisesListRef = document.getElementById('exercises-list-container');
-
-// if (exercisesListRef) {
-//   exercisesListRef.addEventListener('click', onExerciseListClick);
-// }
-
-// export function onExerciseListClick(event) {
-
-//   if (!event.target.closest('[data-id]')) {
-//     return;
-//   }
-
-//   const id = event.target.closest('[data-id]').dataset.id;
-//   modalExercises('64f389465ae26083f39b17a5');
-// }
-
-
-
 export const handleClickFavoritesBtn = cardData => {
   const favoriteButton = document.querySelector(
     '.modal-exercises__button-favourites'
   );
   const isFavoriteCard = favoritesStorage.isFavorite(cardData._id);
-
 
   if (!isFavoriteCard) {
     favoritesStorage.add(cardData);
@@ -189,7 +162,7 @@ export const handleClickFavoritesBtn = cardData => {
 
     return;
   }
-  
+
   favoritesStorage.remove(cardData._id);
 
   favoriteButton.innerHTML = `Add to favorites

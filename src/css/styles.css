@@ -22,6 +22,7 @@
 @import url('./quote.css');
 @import url('./static-pages.css');
 @import url('./footer.css');
+@import url('./loader.css');
 
 :root {
   --clear-white: #ffffff;

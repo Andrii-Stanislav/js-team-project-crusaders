@@ -1,36 +1,32 @@
-import { getExercises } from '../api/get-exercises';
-
-import createExercisesMarkup from './create-exercises-markup';
-
-import clearElement from '../helper/clear-element';
+import { getExercisesByKeyword } from '../api/get-exercises-by-keyword';
 
 import { refs } from '../refs';
+import { filtersService } from '../storage/filters';
+import renderExercisesList from './render-exercises-list';
 
-export default async function handleSearchSubmit(element, filter) {
+export default async function handleSearchSubmit(element) {
   // Prevent page reload
   element.preventDefault();
-  // Show error message if filter are not configured
-  if (!filter) {
-    console.error('Filter are not configured');
-    return;
+
+  let filter = filtersService.exercisesFilters.get().toLowerCase();
+  let group = filtersService.exercisesGroups.get().toLowerCase();
+
+  filter = filter.toLowerCase().split(' ').join('');
+  if (filter === 'bodyparts') {
+    filter = filter.slice(0, -1);
   }
+  group = group.toLowerCase();
 
   // Clear spaces and capital letters from user input
-  const searchInputValue = element.currentTarget.elements.search.value
-    .trim()
-    .toLowerCase();
+  const keyword =
+    element.currentTarget.elements.search.value.trim().toLowerCase() ?? '';
 
-  // Check if somesthing was written in search
-  if (!searchInputValue) {
-    // Show message for user that search keyword wasn't typed
-    alert('You have to write a search query');
-    // Clear search input
-    clearElement(refs.searchInputElement);
-    return;
-  }
-
-  const responseData = await getExercises(filter, searchInputValue);
+  const responseData = await getExercisesByKeyword({
+    filter,
+    group,
+    keyword,
+  });
 
   // Render exercises list
-  createExercisesMarkup(refs.exercisesContainer, responseData);
+  renderExercisesList(refs.exercisesContainer, responseData.data.results);
 }
