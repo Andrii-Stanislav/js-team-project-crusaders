@@ -8,6 +8,9 @@ export const refs = {
   exercisesFiltersList: document.querySelector('.js-exercises-filters-list'),
   exercisesFiltersTabs: document.getElementById('exercises-filters-tabs'),
   exercisesFiltersTabsList: document.querySelectorAll('.exercises-filters-tab'),
+  exercisesFiltersPagination: document.getElementById(
+    'exercises-filters-pagination'
+  ),
   // exercises search
   searchInputElement: document.querySelector('.search-input'),
   searchClearButton: document.querySelector('.button-clear'),

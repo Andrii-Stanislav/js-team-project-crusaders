@@ -3,6 +3,7 @@ import Pagination from 'tui-pagination';
 import { fetchFilters } from '../api/fetch-filters';
 import { filtersService } from '../storage/filters';
 import { refs } from '../refs';
+import { closeExercisesList } from '../helper/control-lists-view';
 
 const initPage = filtersService.exercisesFiltersTable.getPage();
 const initFilter = filtersService.exercisesFilters.get();
@@ -50,17 +51,19 @@ function displayExercises(results) {
   refs.exercisesFiltersList.innerHTML = '';
 
   const markup = results
-    .map(
-      ({ filter, name, imgURL }) => `
-  <li class="filters__item">
-    <img class="filters__img-first" src="${imgURL}"></img>
-    <div class="filters__wrapper-first">
-    <h2 class="filters__title-first">${filter}</h2>
-    <p class="filters__text-first">${name}</p>
+    .map(({ filter, name, imgURL }) => {
+      const dataFilter = `data-filter="${name}"`;
+
+      return `
+  <li class="filters__item" ${dataFilter}>
+    <img class="filters__img-first" src="${imgURL}"  ${dataFilter}></img>
+    <div class="filters__wrapper-first" ${dataFilter}>
+    <h2 class="filters__title-first" ${dataFilter}>${filter}</h2>
+    <p class="filters__text-first" ${dataFilter}>${name}</p>
     </div>
   </li>
-    `
-    )
+    `;
+    })
     .join('');
 
   refs.exercisesFiltersList.insertAdjacentHTML('beforeend', markup);
@@ -77,6 +80,7 @@ refs.exercisesFiltersTabs.addEventListener('click', event => {
 
   const newFilter = event.target.textContent.trim();
   refs.exercisesFiltersList.innerHTML = '';
+  closeExercisesList();
 
   filtersService.exercisesFilters.set(newFilter);
   filtersService.exercisesFiltersTable.setPage(1);

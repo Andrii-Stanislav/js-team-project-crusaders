@@ -7,10 +7,10 @@ export const filtersService = {
     return sessionStorage.getItem(IS_OPENED_EXERCISES_LIST) === 'true';
   },
   openExercisesList: () => {
-    sessionStorage.setItem(IS_OPENED_EXERCISES_LIST, true);
+    sessionStorage.setItem(IS_OPENED_EXERCISES_LIST, 'true');
   },
   closeExercisesList: () => {
-    sessionStorage.setItem(IS_OPENED_EXERCISES_LIST, false);
+    sessionStorage.setItem(IS_OPENED_EXERCISES_LIST, 'false');
   },
 
   exercisesFilters: {
