@@ -5,4 +5,4 @@ import { refs } from '../refs';
 
 const favoriteExercises = favoritesStorage.getAll();
 
-createExercisesMarkup(containerFavorites, { results: favoriteExercises });
+createExercisesMarkup(refs.containerFavorites, { results: favoriteExercises });
