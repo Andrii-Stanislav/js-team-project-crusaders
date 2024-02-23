@@ -1,21 +1,122 @@
 .header {
-  padding: 20px 0;
+  padding: 20px 0 30px 0;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    padding: 24px 0 50px 0;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .header {
+    padding: 28px 0 46px 0;
+  }
+}
+
+.header-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-logo-header {
+  fill: var(--primary-dark);
 }
 
 .nav-list {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 40px;
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: var(--primary-dark);
+    width: 233px;
+    height: 52px;
+    border-radius: 60px;
+    color: var(--bg-color);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .nav-list {
+    width: 265px;
+  }
 }
 
 .nav-link {
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  line-height: 1.5;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+
+.nav-selected {
+  padding: 6px 12px;
+  border-radius: 30px;
+  background-color: var(--bg-color);
+  color: var(--primary-dark);
 }
 
 .nav-link:hover,
 .nav-link:focus {
   color: #747bff;
+}
+
+@media screen and (max-width: 767.98px) {
+  .header-networks {
+    display: none;
+  }
+}
+
+.header-networks-list {
+  display: flex;
+  gap: 12px;
+}
+
+.networks-link {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #1214171a;
+  border-radius: 10px;
+  color: var(--primary-dark);
+  transition: color var(--trns-fast), border-color var(--trns-fast);
+}
+
+.networks-link svg {
+  fill: currentColor;
+}
+
+.networks-link:hover,
+.networks-link:focus {
+  color: var(--bg-color);
+  background-color: var(--light-gray);
+}
+
+@media screen and (min-width: 768px) {
+  .mobile-menu-button {
+    display: none;
+  }
+}
+
+.mobile-menu-button svg {
+  stroke: currentColor;
+}
+
+.mobile-menu-button {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: var(--primary-dark);
 }
