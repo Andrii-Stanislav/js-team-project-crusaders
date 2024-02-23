@@ -52,14 +52,15 @@ function displayExercises(results) {
 
   const markup = results
     .map(({ filter, name, imgURL }) => {
-      const dataFilter = `data-filter="${name}"`;
+      const dataFilter = `data-filter="${filter}"`;
+      const dataGroupName = `data-group="${name}"`;
 
       return `
-  <li class="filters__item" ${dataFilter}>
+  <li class="filters__item" ${dataFilter} ${dataGroupName}>
     <img class="filters__img-first" src="${imgURL}"  ${dataFilter}></img>
     <div class="filters__wrapper-first" ${dataFilter}>
-    <h2 class="filters__title-first" ${dataFilter}>${filter}</h2>
-    <p class="filters__text-first" ${dataFilter}>${name}</p>
+    <h2 class="filters__title-first" ${dataFilter}>${name}</h2>
+    <p class="filters__text-first" ${dataFilter}>${filter}</p>
     </div>
   </li>
     `;
