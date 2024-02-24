@@ -15,9 +15,9 @@
     
     <script type="module" crossorigin src="/js-team-project-crusaders/commonHelpers2.js"></script>
     <link rel="modulepreload" crossorigin href="/js-team-project-crusaders/assets/vendor-d8b4b001.js">
-    <link rel="modulepreload" crossorigin href="/js-team-project-crusaders/assets/header-3a9a9193.js">
-    <link rel="modulepreload" crossorigin href="/js-team-project-crusaders/assets/open-exercises-modal-d3c0a6be.js">
-    <link rel="stylesheet" href="/js-team-project-crusaders/assets/header-e7688504.css">
+    <link rel="modulepreload" crossorigin href="/js-team-project-crusaders/assets/header-d6ee78fb.js">
+    <link rel="modulepreload" crossorigin href="/js-team-project-crusaders/assets/open-exercises-modal-b96c99e8.js">
+    <link rel="stylesheet" href="/js-team-project-crusaders/assets/header-c14299cb.css">
     <link rel="stylesheet" href="/js-team-project-crusaders/assets/vendor-a18337f1.css">
   </head>
 
@@ -142,21 +142,30 @@
         </ul>
       </div>
     </div>
-    <img
-      src="/js-team-project-crusaders/assets/hero-desktop-5a7f28cd.webp"
-      alt="Two women"
-      class="hero-image destop"
-    />
-    <img
-      src="/js-team-project-crusaders/assets/hero-tablet-d509c148.webp"
-      alt="Two women"
-      class="hero-image tablet"
-    />
-    <img
-      src="/js-team-project-crusaders/assets/hero-mobile-8f6bd0ae.webp"
-      alt="Two women"
-      class="hero-image mobile"
-    />
+    <picture>
+      <source
+        media="(max-width: 767.98px)"
+        srcset="/js-team-project-crusaders/assets/hero-mobile-8f6bd0ae.webp , /js-team-project-crusaders/assets/hero-mobile@2x-20dd6586.webp 2x"
+        type="image/webp"
+      />
+      <source
+        media="(min-width: 768px) and (max-width: 1439px)"
+        srcset="/js-team-project-crusaders/assets/hero-tablet-d509c148.webp , /js-team-project-crusaders/assets/hero-tablet@2x-3794377c.webp 2x"
+        type="image/webp"
+      />
+      <source
+        media="(min-width: 1440px)"
+        srcset="/js-team-project-crusaders/assets/hero-desktop-5a7f28cd.webp , /js-team-project-crusaders/assets/hero-desktop@2x-44f99c59.webp 2x"
+        type="image/webp"
+      />
+      <img
+        src="/js-team-project-crusaders/assets/hero-desktop-5a7f28cd.webp"
+        alt="Two women"
+        class="hero-image"
+        loading="lazy"
+      />
+    </picture>
+
     <ul class="tags-list2">
       <li class="tag">#Sport</li>
       <li class="tag">#Healthy</li>
@@ -287,12 +296,12 @@
           <div>
             <div class="filters__container">
   <ul class="filters__list js-exercises-filters-list"></ul>
-  <div id="exercises-filters-pagination" class="tui-pagination"></div>
+  <div id="exercises-filters-pagination" class="pagination-container"></div>
 </div>
 
             <div>
   <ul class="exercises-container"></ul>
-  <div id="main-exercises-pagination" class="tui-pagination"></div>
+  <div id="main-exercises-pagination" class="pagination-container"></div>
 </div>
 
           </div>
