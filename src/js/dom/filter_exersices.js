@@ -1,17 +1,14 @@
-import Pagination from 'tui-pagination';
-
 import { fetchFilters } from '../api/fetch-filters';
 import { filtersService } from '../storage/filters';
 import { refs } from '../refs';
 import { closeExercisesList } from '../helper/control-lists-view';
+import { addPagination } from '../helper/add-pagination.js';
 
 const initPage = filtersService.exercisesFiltersTable.getPage();
 const initFilter = filtersService.exercisesFilters.get();
 
-// initial fetch and setup pagination
 getInitFiltersExercises({ page: initPage, filter: initFilter });
 
-// set initFilter;
 refs.exercisesFiltersTabsList.forEach(elem => {
   const textContent = elem.textContent.trim();
   if (textContent === initFilter) {
@@ -22,18 +19,16 @@ refs.exercisesFiltersTabsList.forEach(elem => {
 function getInitFiltersExercises({ page, filter }) {
   fetchFilters({ page, filter }).then(
     ({ data: { results, page, perPage, totalPages } }) => {
-      const pagination = new Pagination('exercises-filters-pagination', {
-        page: Number(page),
-        itemsPerPage: perPage,
-        totalItems: totalPages * perPage,
-      });
+      addPagination(
+        'exercises-filters-pagination',
+        {page, perPage, totalPages},
+        newPage => {
+            const currentFilter = filtersService.exercisesFilters.get();
 
-      pagination.on('beforeMove', function (eventData) {
-        const currentFilter = filtersService.exercisesFilters.get();
-
-        getFiltersExercisesForNewPage(currentFilter, eventData.page);
-        filtersService.exercisesFiltersTable.setPage(eventData.page);
-      });
+            getFiltersExercisesForNewPage(currentFilter, newPage);
+            filtersService.exercisesFiltersTable.setPage(newPage);
+          },
+        );
 
       displayExercises(results);
     }
@@ -85,6 +80,7 @@ refs.exercisesFiltersTabs.addEventListener('click', event => {
 
   filtersService.exercisesFilters.set(newFilter);
   filtersService.exercisesFiltersTable.setPage(1);
+  filtersService.exercisesTable.setPage(1);
 
   getInitFiltersExercises({ page: 1, filter: newFilter });
 });
