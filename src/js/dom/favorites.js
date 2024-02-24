@@ -17,7 +17,7 @@ const initialFavoriteList = () => {
     currentPage * PER_PAGE
   );
 
-  renderExercisesList(refs.containerFavorites, favoriteExercisesPage);
+  renderExercisesList(refs.containerFavorites, favoriteExercisesPage, true);
 
   setExercisesPagination(
     'favorites-exercises-pagination',

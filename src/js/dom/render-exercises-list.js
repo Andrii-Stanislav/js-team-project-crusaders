@@ -1,6 +1,10 @@
 import createExercisesMarkup from './create-exercises-markup';
 
-export default function renderExercisesList(domContainer, exercisesList) {
+export default function renderExercisesList(
+  domContainer,
+  exercisesList,
+  isFavorite = false
+) {
   // Clear list in DOM before each request
   domContainer.innerHTML = '';
   // Check if data received
@@ -17,6 +21,6 @@ export default function renderExercisesList(domContainer, exercisesList) {
   // Insert list after the container open tag
   domContainer.insertAdjacentHTML(
     'afterbegin',
-    createExercisesMarkup(exercisesList, false)
+    createExercisesMarkup(exercisesList, isFavorite)
   );
 }
