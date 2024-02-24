@@ -17,9 +17,12 @@ export const refs = {
   searchFormElement: document.querySelector('.search-form'),
   // exercises
   exercisesContainer: document.querySelector('.exercises-container'),
+  mainExercisesPagination: document.getElementById('main-exercises-pagination'),
+  // favorites
+  favoriteContainer: document.querySelector('.favorites-exercises-list'),
+  // breadcrumbs
   breadcrumbsText: document.querySelector('.breadcrumbs-subtitle'),
   breadcrumbsDivider: document.querySelector('.breadcrumbs-divider'),
-  mainExercisesPagination: document.getElementById('main-exercises-pagination'),
   // favorites
   containerFavorites: document.querySelector('.favorites-exercises-list'),
   // footer

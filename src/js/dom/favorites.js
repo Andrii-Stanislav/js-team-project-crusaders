@@ -7,7 +7,7 @@ import { addPagination } from '../helper/add-pagination.js';
 
 const PER_PAGE = 10;
 
-const initialFavoriteList = () => {
+export const initialFavoriteList = () => {
   const favoriteExercises = favoritesStorage.getAll();
 
   const currentPage = favoritesFiltersService.getPage();
@@ -17,7 +17,7 @@ const initialFavoriteList = () => {
     currentPage * PER_PAGE
   );
 
-  renderExercisesList(refs.containerFavorites, favoriteExercisesPage);
+  renderExercisesList(refs.containerFavorites, favoriteExercisesPage, true);
 
   addPagination(
     'favorites-exercises-pagination',
