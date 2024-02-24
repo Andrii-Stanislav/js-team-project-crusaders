@@ -31,16 +31,12 @@ export default async function initialExercisesList() {
   // Render exercises list
 
   const { results, page, perPage, totalPages } = responseData.data;
-  renderExercisesList(refs.exercisesContainer, results, {
-    page,
-    perPage,
-    totalPages,
-  });
+  renderExercisesList(refs.exercisesContainer, results);
 
   setExercisesPagination(
     'main-exercises-pagination',
     {
-      page,
+      page: Number(page),
       perPage,
       totalPages,
     },
