@@ -4,6 +4,7 @@ import Modal from '../helper/modal';
 import modalExerciseRating from './modal-exercise-rating';
 import { updateRatingStar } from '../helper/update-rating';
 import { favoritesStorage } from './../storage/favorites';
+import { initialFavoriteList } from './favorites'
 
 export async function modalExercises(id) {
   const modal = new Modal();
@@ -159,7 +160,7 @@ export const handleClickFavoritesBtn = cardData => {
           >
             <use href=${spriteUrl}#icon-trash></use>
           </svg>`;
-
+    initialFavoriteList();
     return;
   }
 
@@ -174,6 +175,6 @@ export const handleClickFavoritesBtn = cardData => {
           >
             <use href=${spriteUrl}#icon-heart></use>
           </svg>`;
-
+  initialFavoriteList()
   return;
 };
