@@ -1,28 +1,32 @@
-<header class="header">
-  <div class="container header-box">
-    <a href="../index.html" class="brand-logo-header">
-      <svg width="132" height="24">
-        <use href="images/svg/sprite-footer-icons.svg#icon-logo-white"></use>
+<div class="mobile-menu-backdrop" data-menu-backdrop>
+  <div class="mobile-menu-box">
+    <button
+      type="button"
+      class="close-modal"
+      data-menu-close
+      aria-label="Close mobile menu button"
+    >
+      <svg class="close-svg" width="16px" height="16px">
+        <use href="images/svg/icons.svg#icon-cross"></use>
       </svg>
-    </a>
+    </button>
 
-    <nav class="nav-menu">
-      <ul class="list nav-list">
-        <li class="item nav-list-item">
-          <a class="link nav-link" href="./index.html">Home</a>
+    <nav class="menu">
+      <ul class="list mobile-nav" data-menu-nav-links>
+        <li class="item">
+          <a class="link menu-nav-link" href="./index.html">Home</a>
         </li>
-
-        <li class="item nav-list-item">
-          <a class="link nav-link" href="./favorites.html">Favorites</a>
+        <li class="item">
+          <a class="link menu-nav-link" href="./favorites.html">Favorites</a>
         </li>
       </ul>
     </nav>
 
-    <div class="header-networks">
-      <ul class="list header-networks-list">
+    <div class="menu-networks">
+      <ul class="list menu-networks-list">
         <li class="item">
           <a
-            class="link networks-link"
+            class="link menu-networks-link"
             target="_blank"
             rel="noreferrer noopener"
             href="https://www.facebook.com/goITclub/"
@@ -38,7 +42,7 @@
 
         <li class="item">
           <a
-            class="link networks-link"
+            class="link menu-networks-link"
             target="_blank"
             rel="noreferrer noopener"
             href="https://www.instagram.com/goitclub/"
@@ -54,7 +58,7 @@
 
         <li class="item">
           <a
-            class="link networks-link"
+            class="link menu-networks-link"
             target="_blank"
             rel="noreferrer noopener"
             href="https://www.youtube.com/c/GoIT"
@@ -69,15 +73,5 @@
         </li>
       </ul>
     </div>
-
-    <button
-      class="mobile-menu-button"
-      data-menu-open
-      aria-label="Mobile menu button"
-    >
-      <svg width="32" height="32">
-        <use href="images/svg/icons.svg#icon-menu"></use>
-      </svg>
-    </button>
   </div>
-</header>
+</div>

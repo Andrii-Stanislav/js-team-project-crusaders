@@ -25,11 +25,11 @@
 
 .hero-title {
   color: #242424;
-  font-family: "DM Sans";
+  font-family: 'DM Sans';
   font-size: 74px;
   font-style: normal;
   font-weight: 400;
-  line-height: 1.00;
+  line-height: 1;
   letter-spacing: -0.02em;
   max-width: 698px;
   justify-content: flex-start;
@@ -39,7 +39,7 @@
 @media (max-width: 767.98px) {
   .hero-title {
     color: #242424;
-    font-family: "DM Sans";
+    font-family: 'DM Sans';
     font-size: 38px;
     font-style: normal;
     font-weight: 400;
@@ -63,45 +63,43 @@
 
 .hero-title-accent {
   color: #242424;
-  font-family: "DM Sans";
+  font-family: 'DM Sans';
   font-size: 74px;
   font-style: italic;
   font-weight: 400;
-  line-height: 1.00;
+  line-height: 1;
   letter-spacing: -0.02em;
-
 }
 
 @media (max-width: 767.98px) {
   .hero-title-accent {
     color: #242424;
-    font-family: "DM Sans";
+    font-family: 'DM Sans';
     font-size: 38px;
     font-style: italic;
     font-weight: 400;
-    line-height: 1.00;
+    line-height: 1;
     letter-spacing: -0.02em;
   }
 }
 
-p {
+.hero-text {
   max-width: 528px;
   color: #242424;
   padding-top: 20px;
-  font-family: "DM Sans";
+  font-family: 'DM Sans';
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: 1.33;
   letter-spacing: -0.02em;
-
 }
 
 @media (max-width: 767.98px) {
-  p {
+  .hero-text {
     color: #242424;
     max-width: 335px;
-    font-family: "DM Sans";
+    font-family: 'DM Sans';
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -109,7 +107,6 @@ p {
     letter-spacing: -0.02em;
   }
 }
-
 .hero-hashtags {
   display: flex;
   flex-direction: column;
@@ -152,7 +149,7 @@ p {
 .tag {
   color: #242424;
 
-  font-family: "DM Sans";
+  font-family: 'DM Sans';
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -170,7 +167,7 @@ p {
 @media (max-width: 767.98px) {
   .tag {
     color: #242424;
-    font-family: "DM Sans";
+    font-family: 'DM Sans';
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -188,7 +185,6 @@ p {
   justify-content: center;
   align-items: center;
   border-radius: 60px;
-
 }
 
 @media screen and (min-width: 320px) and (max-width: 1439.98px) {
@@ -216,7 +212,6 @@ p {
 }
 
 @media screen and (max-width: 319.98px) {
-
   .destop,
   .tablet {
     display: none;

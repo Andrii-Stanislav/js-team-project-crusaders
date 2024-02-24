@@ -62,11 +62,11 @@
 .modal-exercises__rating-star {
   position: relative;
   color: var(--bg-color-20);
-
+  margin-right: 3px;
   pointer-events: none;
   display: block;
-
-  transform: scale(1.3);
+  border-radius: 50%;
+  transform: scale(1.2);
 }
 
 .modal-exercises__partials {
@@ -208,4 +208,15 @@
   }
 
 
+}
+.modal-exercises__rating-star::before {
+  content: '★';
+  position: absolute;
+  display: block;
+  margin-right: 3px;
+  top: 0px;
+  left: 0px;
+  width: var(--percent-filled);
+  overflow: hidden;
+  color: #EEA10C;
 }

@@ -12,21 +12,27 @@
       href="https://fonts.googleapis.com/css2?family=Alike+Angular&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Eczar&family=Neuton&family=Raleway:wght@800&family=Roboto:wght@400;500;700;900&family=Space+Mono&family=Work+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
 
   <body>
-    <a href="./favorites.html"> to favorit test delete later </a>
-
     <load src="partials/header.html" />
-
     <load src="partials/hero.html" />
 
     <main>
-      <load src="./partials/filters.html" />
+      <div class="container filters-and-search">
+        <div>
+          <load src="./partials/breadcrumbs.html" />
+        </div>
+
+        <div class="filters-and-search-block">
+          <load src="./partials/search.html" />
+
+          <load src="./partials/filters.html" />
+        </div>
+      </div>
 
       <div class="container main-content">
-        
         <div class="main-quote">
           <load src="./partials/quote.html" />
         </div>
@@ -38,9 +44,10 @@
     </main>
 
     <load src="partials/modal.html" />
-
+    <load src="partials/mobile-menu.html" />
+    <load src="partials/loader.html" />
     <load src="partials/footer.html" />
 
-    <script type="module" src="./main.js"></script>
+    <script type="module" src="./index.js"></script>
   </body>
 </html>
