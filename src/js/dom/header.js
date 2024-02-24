@@ -1,11 +1,19 @@
 import { refs } from '../refs';
 
-const currentUrl = window.location.href;
+const currentUrl = window.location;
+const defaultPageName = 'home';
 
 refs.listItems.forEach((item) => {
   const link = item.querySelector('a');
 
-  if (link.href === currentUrl) {
+  if (!currentUrl.pathname
+    && link.textContent.toLocaleLowerCase() === defaultPageName) {
+    item.classList.add('nav-selected');
+
+    return;
+  }
+
+  if (link.href === currentUrl.href) {
     item.classList.add('nav-selected');
   }
 });
