@@ -13,7 +13,7 @@ export default function renderExercisesList(
     domContainer.insertAdjacentHTML(
       'afterbegin',
       `<li class="list-item-error">
-        We haven't found exercises. Please try another search term"
+        We haven't found exercises. Please try another search term
     </li>`
     );
     return;
