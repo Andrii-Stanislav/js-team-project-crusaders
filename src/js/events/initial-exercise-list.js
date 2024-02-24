@@ -4,6 +4,7 @@ import { refs } from '../refs';
 
 import { getExercisesByKeyword } from '../api/get-exercises-by-keyword';
 import renderExercisesList from '../dom/render-exercises-list';
+import { setExercisesPagination } from '../dom/exercises-pagination';
 import addText from '../helper/add-text';
 
 export default async function initialExercisesList() {
@@ -16,11 +17,38 @@ export default async function initialExercisesList() {
   }
   group = group.toLowerCase();
 
-  const responseData = await getExercisesByKeyword({ filter, group });
+  const currentPage = filtersService.exercisesTable.getPage();
+  const currentKeyword = filtersService.exercisesTable.getKeyword();
+
+  const responseData = await getExercisesByKeyword({
+    filter,
+    group,
+    page: currentPage,
+    keyword: currentKeyword,
+  });
 
   addText(refs.breadcrumbsText, group, refs.breadcrumbsDivider);
   // Render exercises list
-  renderExercisesList(refs.exercisesContainer, responseData.data.results);
+
+  const { results, page, perPage, totalPages } = responseData.data;
+  renderExercisesList(refs.exercisesContainer, results, {
+    page,
+    perPage,
+    totalPages,
+  });
+
+  setExercisesPagination(
+    'main-exercises-pagination',
+    {
+      page,
+      perPage,
+      totalPages,
+    },
+    newPage => {
+      filtersService.exercisesTable.setPage(newPage);
+      initialExercisesList();
+    }
+  );
 }
 
 initialExercisesList();

@@ -1,8 +1,5 @@
-import { getExercisesByKeyword } from '../api/get-exercises-by-keyword';
-
-import { refs } from '../refs';
 import { filtersService } from '../storage/filters';
-import renderExercisesList from './render-exercises-list';
+import initialExerciseList from '../events/initial-exercise-list';
 
 export default async function handleSearchSubmit(element) {
   // Prevent page reload
@@ -21,12 +18,8 @@ export default async function handleSearchSubmit(element) {
   const keyword =
     element.currentTarget.elements.search.value.trim().toLowerCase() ?? '';
 
-  const responseData = await getExercisesByKeyword({
-    filter,
-    group,
-    keyword,
-  });
+  filtersService.exercisesTable.setKeyword(keyword);
+  filtersService.exercisesTable.setPage(1);
 
-  // Render exercises list
-  renderExercisesList(refs.exercisesContainer, responseData.data.results);
+  initialExerciseList();
 }

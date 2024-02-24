@@ -2,6 +2,8 @@ const CURRENT_EXERCISES_FILTER_PAGE = 'current-exercises-filter-page';
 const CURRENT_EXERCISES_FILTER_KEYWORD = 'current-exercises-filter-keyword';
 const CURRENT_EXERCISES_GROUP_NAME = 'current-exercises-group-name';
 const IS_OPENED_EXERCISES_LIST = 'is-opened-exercises-list';
+const CURRENT_EXERCISES_PAGE = 'current-exercises-page';
+const CURRENT_EXERCISES_KEYWORD = 'current-exercises-keyword';
 
 export const filtersService = {
   checkIsOpenExercisesList: () => {
@@ -41,6 +43,23 @@ export const filtersService = {
     getPage: () => {
       const value = sessionStorage.getItem(CURRENT_EXERCISES_FILTER_PAGE);
       return value ? Number(value) : 1;
+    },
+  },
+
+  exercisesTable: {
+    setPage: page => {
+      sessionStorage.setItem(CURRENT_EXERCISES_PAGE, page.toString());
+    },
+    getPage: () => {
+      const value = sessionStorage.getItem(CURRENT_EXERCISES_PAGE);
+      return value ? Number(value) : 1;
+    },
+
+    setKeyword: keyword => {
+      sessionStorage.setItem(CURRENT_EXERCISES_KEYWORD, keyword);
+    },
+    getKeyword: () => {
+      return sessionStorage.getItem(CURRENT_EXERCISES_KEYWORD) ?? '';
     },
   },
 };
