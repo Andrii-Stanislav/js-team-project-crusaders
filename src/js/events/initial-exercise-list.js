@@ -4,8 +4,8 @@ import { refs } from '../refs';
 
 import { getExercisesByKeyword } from '../api/get-exercises-by-keyword';
 import renderExercisesList from '../dom/render-exercises-list';
-import { setExercisesPagination } from '../dom/exercises-pagination';
 import addText from '../helper/add-text';
+import { addPagination } from '../helper/add-pagination.js';
 
 export default async function initialExercisesList() {
   let filter = filtersService.exercisesFilters.get();
@@ -33,7 +33,7 @@ export default async function initialExercisesList() {
   const { results, page, perPage, totalPages } = responseData.data;
   renderExercisesList(refs.exercisesContainer, results);
 
-  setExercisesPagination(
+  addPagination(
     'main-exercises-pagination',
     {
       page: Number(page),

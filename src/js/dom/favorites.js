@@ -1,9 +1,9 @@
 import { favoritesStorage } from '../storage/favorites';
 import { favoritesFiltersService } from '../storage/favorites-filters';
 import renderExercisesList from './render-exercises-list';
-import { setExercisesPagination } from './exercises-pagination';
 
 import { refs } from '../refs';
+import { addPagination } from '../helper/add-pagination.js';
 
 const PER_PAGE = 10;
 
@@ -19,7 +19,7 @@ const initialFavoriteList = () => {
 
   renderExercisesList(refs.containerFavorites, favoriteExercisesPage);
 
-  setExercisesPagination(
+  addPagination(
     'favorites-exercises-pagination',
     {
       page: currentPage,
