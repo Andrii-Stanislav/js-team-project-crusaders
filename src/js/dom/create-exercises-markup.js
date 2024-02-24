@@ -1,3 +1,5 @@
+import spriteUrl from './../../images/svg/icons.svg';
+
 export default function createExercisesMarkup(data, isFavorite) {
   return data
     .map(
@@ -18,13 +20,13 @@ export default function createExercisesMarkup(data, isFavorite) {
           isFavorite
             ? `<button class="exercise-button-delete js-button-favorites-delete" data-id="${_id}">
               <svg class="trash-icon js-button-favorites-delete" data-id="${_id}">
-                <use class="js-button-favorites-delete" href="images/svg/icons.svg#icon-trash" data-id="${_id}"></use>
+                <use class="js-button-favorites-delete" href="${spriteUrl}#icon-trash" data-id="${_id}"></use>
               </svg>
             </button>`
             : `<p class="exercise-rating">
               ${rating}
               <svg class="rating-icon">
-                <use href="images/svg/icons.svg#icon-star-yellow"></use>
+                <use href="${spriteUrl}#icon-star-yellow"></use>
               </svg>
             </p>`
         }
@@ -33,14 +35,14 @@ export default function createExercisesMarkup(data, isFavorite) {
       <button type="menu" class="exercise-start-button" data-id="${_id}">
         Start
         <svg class="button-icon icon-arrow">
-          <use href="images/svg/icons.svg#icon-arrow"></use>
+          <use href="${spriteUrl}#icon-arrow"></use>
         </svg>
       </button>
     </div>
     <div class="exercise-title-container">
       <span class="exercise-icon-container">
         <svg class="exercise-icon">
-          <use href="images/svg/icons.svg#icon-man"></use>
+          <use href="${spriteUrl}#icon-man"></use>
         </svg>
       </span>
       <h3 class="exercise-title">${name}</h3>
