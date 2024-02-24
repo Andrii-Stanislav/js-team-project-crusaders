@@ -19,6 +19,7 @@ export const refs = {
   exercisesContainer: document.querySelector('.exercises-container'),
   breadcrumbsText: document.querySelector('.breadcrumbs-subtitle'),
   breadcrumbsDivider: document.querySelector('.breadcrumbs-divider'),
+  mainExercisesPagination: document.getElementById('main-exercises-pagination'),
   // favorites
   containerFavorites: document.querySelector('.favorites-exercises-list'),
   // footer
