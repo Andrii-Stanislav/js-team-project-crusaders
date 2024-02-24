@@ -2,6 +2,7 @@ import { refs } from '../refs';
 
 import { openExercisesList } from '../helper/control-lists-view';
 import { filtersService } from '../storage/filters';
+import initialExerciseList from './initial-exercise-list';
 
 import handleGroupClick from '../dom/handle-group-click';
 
@@ -17,5 +18,6 @@ refs.exercisesFiltersList.addEventListener('click', e => {
     openExercisesList();
     filtersService.exercisesGroups.set(group);
     handleGroupClick(refs.exercisesContainer, filter, group);
+    initialExerciseList();
   }
 });
