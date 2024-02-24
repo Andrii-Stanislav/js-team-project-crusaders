@@ -1,4 +1,4 @@
-var b=(s,e,t)=>{if(!e.has(s))throw TypeError("Cannot "+t)};var i=(s,e,t)=>(b(s,e,"read from private field"),t?t.call(s):e.get(s)),m=(s,e,t)=>{if(e.has(s))throw TypeError("Cannot add the same private member more than once");e instanceof WeakSet?e.add(s):e.set(s,t)},v=(s,e,t,a)=>(b(s,e,"write to private field"),a?a.call(s,t):e.set(s,t),t);import{a as k,r as M}from"./header-8a6e6afb.js";const n="/js-team-project-crusaders/assets/icons-1f8f9d65.svg",B=s=>k.get(`/exercises/${s}`);var g,p,l,_,d;class C{constructor(){m(this,g,void 0);m(this,p,void 0);m(this,l,void 0);m(this,_,void 0);m(this,d,void 0);v(this,l,document.getElementById("modalDialog")),v(this,_,document.querySelector(".button-close")),v(this,d,document.getElementById("modal-content")),v(this,g,[]),v(this,p,[]),this.handleCloseButtonClick=this.handleCloseButtonClick.bind(this),this.handleModalClick=this.handleModalClick.bind(this)}handleCloseButtonClick(){this.close()}handleModalClick(e){e.target===i(this,l)&&this.close()}open(){i(this,_).addEventListener("click",this.handleCloseButtonClick),i(this,l).addEventListener("click",this.handleModalClick),i(this,l).showModal()}close(e=!0){i(this,_).removeEventListener("click",this.handleCloseButtonClick),i(this,l).removeEventListener("click",this.handleModalClick),i(this,g).forEach(({type:t,lister:a})=>i(this,d).removeEventListener(t,a)),e&&i(this,p).forEach(t=>t()),i(this,l).close()}setContent(e){i(this,d).innerHTML="",i(this,d).insertAdjacentHTML("beforeend",e)}addContentListener(e,t){i(this,g).push({type:e,lister:t}),i(this,d).addEventListener(e,t)}addOnCloseCallback(e){i(this,p).push(e)}}g=new WeakMap,p=new WeakMap,l=new WeakMap,_=new WeakMap,d=new WeakMap;const L=(s,e,t,a)=>k.patch(`/exercises/${s}/rating`,{rate:e,email:t,review:a}),A=()=>`
+var b=(s,e,t)=>{if(!e.has(s))throw TypeError("Cannot "+t)};var r=(s,e,t)=>(b(s,e,"read from private field"),t?t.call(s):e.get(s)),m=(s,e,t)=>{if(e.has(s))throw TypeError("Cannot add the same private member more than once");e instanceof WeakSet?e.add(s):e.set(s,t)},v=(s,e,t,a)=>(b(s,e,"write to private field"),a?a.call(s,t):e.set(s,t),t);import{P as M}from"./vendor-d8b4b001.js";import{a as k,r as B}from"./header-8a6e6afb.js";const c="/js-team-project-crusaders/assets/icons-1f8f9d65.svg",L=s=>k.get(`/exercises/${s}`);var g,p,l,_,d;class C{constructor(){m(this,g,void 0);m(this,p,void 0);m(this,l,void 0);m(this,_,void 0);m(this,d,void 0);v(this,l,document.getElementById("modalDialog")),v(this,_,document.querySelector(".button-close")),v(this,d,document.getElementById("modal-content")),v(this,g,[]),v(this,p,[]),this.handleCloseButtonClick=this.handleCloseButtonClick.bind(this),this.handleModalClick=this.handleModalClick.bind(this)}handleCloseButtonClick(){this.close()}handleModalClick(e){e.target===r(this,l)&&this.close()}open(){r(this,_).addEventListener("click",this.handleCloseButtonClick),r(this,l).addEventListener("click",this.handleModalClick),r(this,l).showModal()}close(e=!0){r(this,_).removeEventListener("click",this.handleCloseButtonClick),r(this,l).removeEventListener("click",this.handleModalClick),r(this,g).forEach(({type:t,lister:a})=>r(this,d).removeEventListener(t,a)),e&&r(this,p).forEach(t=>t()),r(this,l).close()}setContent(e){r(this,d).innerHTML="",r(this,d).insertAdjacentHTML("beforeend",e)}addContentListener(e,t){r(this,g).push({type:e,lister:t}),r(this,d).addEventListener(e,t)}addOnCloseCallback(e){r(this,p).push(e)}}g=new WeakMap,p=new WeakMap,l=new WeakMap,_=new WeakMap,d=new WeakMap;const A=(s,e,t,a)=>k.patch(`/exercises/${s}/rating`,{rate:e,email:t,review:a}),I=()=>`
     <form name="exercise-rating-form" class="exercise-rating-form">
       <div class="exercise-rating-form__star-container">
         <h2 class="exercise-rating-form__star-title">Rating</h2>
@@ -12,7 +12,7 @@ var b=(s,e,t)=>{if(!e.has(s))throw TypeError("Cannot "+t)};var i=(s,e,t)=>(b(s,e
           >
           <label class="exercise-rating-form__star-label" for="rating-5">
             <svg width="24" height="24">
-              <use href="${n}#icon-star"></use>
+              <use href="${c}#icon-star"></use>
             </svg>
           </label>
           <input
@@ -24,7 +24,7 @@ var b=(s,e,t)=>{if(!e.has(s))throw TypeError("Cannot "+t)};var i=(s,e,t)=>(b(s,e
            >
           <label class="exercise-rating-form__star-label" for="rating-4">
             <svg width="24" height="24">
-              <use href="${n}#icon-star"></use>
+              <use href="${c}#icon-star"></use>
             </svg>
           </label>
           <input
@@ -36,7 +36,7 @@ var b=(s,e,t)=>{if(!e.has(s))throw TypeError("Cannot "+t)};var i=(s,e,t)=>(b(s,e
            >
            <label class="exercise-rating-form__star-label" for="rating-3">
             <svg width="24" height="24">
-              <use href="${n}#icon-star"></use>
+              <use href="${c}#icon-star"></use>
             </svg>
           </label>
           <input
@@ -48,7 +48,7 @@ var b=(s,e,t)=>{if(!e.has(s))throw TypeError("Cannot "+t)};var i=(s,e,t)=>(b(s,e
            >
             <label class="exercise-rating-form__star-label" for="rating-2">
             <svg width="24" height="24">
-              <use href="${n}#icon-star"></use>
+              <use href="${c}#icon-star"></use>
             </svg>
           </label>
           <input
@@ -60,7 +60,7 @@ var b=(s,e,t)=>{if(!e.has(s))throw TypeError("Cannot "+t)};var i=(s,e,t)=>(b(s,e
            >
           <label class="exercise-rating-form__star-label" for="rating-1">
             <svg width="24" height="24">
-              <use href="${n}#icon-star"></use>
+              <use href="${c}#icon-star"></use>
             </svg>
           </label>
           <span class="exercise-rating-form__star-counter"></span>
@@ -91,12 +91,12 @@ var b=(s,e,t)=>{if(!e.has(s))throw TypeError("Cannot "+t)};var i=(s,e,t)=>(b(s,e
       </div>
       <button class="exercise-rating-form-button" type="submit">Send</button>
     </form>
-  `;function I(s){const e=new C;e.addOnCloseCallback(()=>$(s));const t=async a=>{if(a.target.closest(".exercise-rating-form")){a.preventDefault();const{rate:r,email:o,comment:c}=a.target.elements,f=Number(r.value);try{await L(s,f,o.value,c.value),e.close()}catch{}}};e.setContent(A()),e.addContentListener("submit",t),e.open()}function N(s){document.querySelectorAll("#rating .modal-exercises__rating-star").forEach(t=>{const a=parseInt(t.dataset.value,10);let r=0;a<=s?r=100:a-1<s&&(r=(s-a+1)*100),t.style.setProperty("--percent-filled",`${r}%`)})}const u="favorite-exercises",T=s=>{const e=localStorage.getItem(u);if(e){const a=[...JSON.parse(e).filter(r=>r._id!==s._id),s];localStorage.setItem(u,JSON.stringify(a))}else localStorage.setItem(u,JSON.stringify([s]))},H=s=>{const e=localStorage.getItem(u);if(e){const a=JSON.parse(e).filter(r=>r._id!==s);localStorage.setItem(u,JSON.stringify(a))}},O=()=>{const s=localStorage.getItem(u);return s?JSON.parse(s):[]},q=s=>{const e=localStorage.getItem(u);return e?JSON.parse(e).some(a=>a._id===s):!1},x={add:T,remove:H,getAll:O,isFavorite:q};async function $(s){const e=new C;let t;function a(o,c){o.target.closest(".modal-exercises__button-favourites")&&U(t)}function r(o){o.target.closest(".modal-exercises__button-rating")&&(e.close(!1),I(s))}try{const{data:o}=await B(s);t=o;const c=x.isFavorite(t._id);e.setContent(J({...t,rating:Number(t.rating).toFixed(1)},c)),N(Number(t.rating).toFixed(1)),e.addContentListener("click",a),e.addContentListener("click",r),e.open()}catch{}}function J(s,e){const{name:t,burnedCalories:a,bodyPart:r,description:o,target:c,equipment:f,gifUrl:h,popularity:y,rating:E,time:F,_id:S}=s,w=t.charAt(0).toUpperCase()+t.slice(1);return`<div class="modal-exercises__card" >
+  `;function N(s){const e=new C;e.addOnCloseCallback(()=>$(s));const t=async a=>{if(a.target.closest(".exercise-rating-form")){a.preventDefault();const{rate:i,email:o,comment:n}=a.target.elements,f=Number(i.value);try{await A(s,f,o.value,n.value),e.close()}catch{}}};e.setContent(I()),e.addContentListener("submit",t),e.open()}function T(s){document.querySelectorAll("#rating .modal-exercises__rating-star").forEach(t=>{const a=parseInt(t.dataset.value,10);let i=0;a<=s?i=100:a-1<s&&(i=(s-a+1)*100),t.style.setProperty("--percent-filled",`${i}%`)})}const u="favorite-exercises",H=s=>{const e=localStorage.getItem(u);if(e){const a=[...JSON.parse(e).filter(i=>i._id!==s._id),s];localStorage.setItem(u,JSON.stringify(a))}else localStorage.setItem(u,JSON.stringify([s]))},P=s=>{const e=localStorage.getItem(u);if(e){const a=JSON.parse(e).filter(i=>i._id!==s);localStorage.setItem(u,JSON.stringify(a))}},O=()=>{const s=localStorage.getItem(u);return s?JSON.parse(s):[]},q=s=>{const e=localStorage.getItem(u);return e?JSON.parse(e).some(a=>a._id===s):!1},x={add:H,remove:P,getAll:O,isFavorite:q};async function $(s){const e=new C;let t;function a(o,n){o.target.closest(".modal-exercises__button-favourites")&&U(t)}function i(o){o.target.closest(".modal-exercises__button-rating")&&(e.close(!1),N(s))}try{const{data:o}=await L(s);t=o;const n=x.isFavorite(t._id);e.setContent(J({...t,rating:Number(t.rating).toFixed(1)},n)),T(Number(t.rating).toFixed(1)),e.addContentListener("click",a),e.addContentListener("click",i),e.open()}catch{}}function J(s,e){const{name:t,burnedCalories:a,bodyPart:i,description:o,target:n,equipment:f,gifUrl:h,popularity:y,rating:E,time:F,_id:w}=s,S=t.charAt(0).toUpperCase()+t.slice(1);return`<div class="modal-exercises__card" >
     <div class="modal-exercises__image-wrapper">
       <img class="modal-exercises__image" src="${h!==null?h:noImageUrl}" alt="${t}" />
     </div>
     <div class="modal-exercises__description">
-      <p class="modal-exercises__name">${w}</p>
+      <p class="modal-exercises__name">${S}</p>
       <div id="rating" class="modal-exercises__rating">
         <div class="modal-exercises__rating-value">${E}</div>
         <span class="modal-exercises__rating-star" data-value="1">&#9733;</span>
@@ -108,11 +108,11 @@ var b=(s,e,t)=>{if(!e.has(s))throw TypeError("Cannot "+t)};var i=(s,e,t)=>(b(s,e
       <div class="modal-exercises__partials">
         <div class="modal-exercises__partials-item">
           <p class="modal-exercises__partials-title">Target</p>
-          <p class="modal-exercises__partials-value">${c}</p>
+          <p class="modal-exercises__partials-value">${n}</p>
         </div>
         <div class="modal-exercises__partials-item">
           <p class="modal-exercises__partials-title">Body Part</p>
-          <p class="modal-exercises__partials-value">${r}</p>
+          <p class="modal-exercises__partials-value">${i}</p>
         </div>
         <div class="modal-exercises__partials-item">
           <p class="modal-exercises__partials-title">Equipment</p>
@@ -144,7 +144,7 @@ var b=(s,e,t)=>{if(!e.has(s))throw TypeError("Cannot "+t)};var i=(s,e,t)=>(b(s,e
             width="20"
             height="20"
           >
-            <use href=${n}#icon-trash></use>
+            <use href=${c}#icon-trash></use>
           </svg>`:`<button
           type="button"
           class="modal-exercises__button-favourites
@@ -156,10 +156,10 @@ var b=(s,e,t)=>{if(!e.has(s))throw TypeError("Cannot "+t)};var i=(s,e,t)=>(b(s,e
             width="20"
             height="20"
           >
-            <use href=${n}#icon-heart></use>
+            <use href=${c}#icon-heart></use>
           </svg>`}
         </button>
-        <button class="modal-exercises__button-rating" data-value="${S}">Give a rating</button>
+        <button class="modal-exercises__button-rating" data-value="${w}">Give a rating</button>
       </div>
     </div>
     </div>`}const U=s=>{const e=document.querySelector(".modal-exercises__button-favourites");if(!x.isFavorite(s._id)){x.add(s),e.innerHTML=`Unfavorite
@@ -169,7 +169,7 @@ var b=(s,e,t)=>{if(!e.has(s))throw TypeError("Cannot "+t)};var i=(s,e,t)=>(b(s,e
             width="20"
             height="20"
           >
-            <use href=${n}#icon-trash></use>
+            <use href=${c}#icon-trash></use>
           </svg>`;return}x.remove(s._id),e.innerHTML=`Add to favorites
           <svg
             class="modal-exercises__button-favourites_icon add-to-favorites-btn"
@@ -177,8 +177,8 @@ var b=(s,e,t)=>{if(!e.has(s))throw TypeError("Cannot "+t)};var i=(s,e,t)=>(b(s,e
             width="20"
             height="20"
           >
-            <use href=${n}#icon-heart></use>
-          </svg>`};function P(s,e){return s.map(({_id:t,bodyPart:a,target:r,rating:o,burnedCalories:c,time:f,name:h})=>`<li id="${t}" class="exercise-item">
+            <use href=${c}#icon-heart></use>
+          </svg>`};function R(s,e){return s.map(({_id:t,bodyPart:a,target:i,rating:o,burnedCalories:n,time:f,name:h})=>`<li id="${t}" class="exercise-item">
     <div class="exercise-top-container">
       <div class="exercise-top-info">
         <p class="exercise-tag">Workout</p>
@@ -212,16 +212,16 @@ var b=(s,e,t)=>{if(!e.has(s))throw TypeError("Cannot "+t)};var i=(s,e,t)=>(b(s,e
     </div>
     <div class="exercise-bottom-container">
       <p class="exercise-info">
-        Burned calories: <mark class="exercise-marked-text">${c} / ${f} min</mark>
+        Burned calories: <mark class="exercise-marked-text">${n} / ${f} min</mark>
       </p>
       <p class="exercise-info">
         Body part: <mark class="exercise-marked-text exercise-info-text">${a}</mark>
       </p>
       <p class="exercise-info">
-        Target: <mark class="exercise-marked-text exercise-info-text">${r}</mark>
+        Target: <mark class="exercise-marked-text exercise-info-text">${i}</mark>
       </p>
     </div>
-  </li>`).join("")}function z(s,e){if(s.innerHTML="",(e==null?void 0:e.length)===0||!e){s.insertAdjacentHTML("afterbegin",`<li class="list-item-error">
+  </li>`).join("")}function W(s,e){if(s.innerHTML="",(e==null?void 0:e.length)===0||!e){s.insertAdjacentHTML("afterbegin",`<li class="list-item-error">
         We haven't found exercises. Please try another search term"
-    </li>`);return}s.insertAdjacentHTML("afterbegin",P(e,!1))}M.exercisesContainer.addEventListener("click",s=>{s.target.dataset.id&&Array.from(s.target.classList).includes("exercise-start-button")&&$(s.target.dataset.id)});export{x as f,z as r};
-//# sourceMappingURL=open-exercises-modal-427d9c7f.js.map
+    </li>`);return}s.insertAdjacentHTML("afterbegin",R(e,!1))}const Y=(s,{page:e,perPage:t,totalPages:a},i)=>{new M(s,{page:Number(e),itemsPerPage:t,totalItems:a*t}).on("beforeMove",function(n){i(n.page)})};B.exercisesContainer.addEventListener("click",s=>{s.target.dataset.id&&Array.from(s.target.classList).includes("exercise-start-button")&&$(s.target.dataset.id)});export{x as f,W as r,Y as s};
+//# sourceMappingURL=open-exercises-modal-bd5f3e3d.js.map
