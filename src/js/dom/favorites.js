@@ -4,24 +4,21 @@ import renderExercisesList from './render-exercises-list';
 
 import { refs } from '../refs';
 import { addPagination } from '../helper/add-pagination.js';
-import createExercisesMarkup from './create-exercises-markup.js';
 
 const PER_PAGE = 10;
 
 export const initialFavoriteList = () => {
   const favoriteExercises = favoritesStorage.getAll();
 
-  if (favoriteExercises.length === 0 ) {
-    refs.containerFavorites.insertAdjacentHTML(
-      'afterbegin',
+  if (favoriteExercises.length === 0) {
+    refs.containerFavorites.innerHTML =
       "<div class='favorite-exercises-empty-text-container'>" +
-        "<p class='favorite-exercises-empty-text'>" +
-          "It appears that you haven't added any exercises to your favorites" +
-          " yet. To get started, you can add exercises that you like to your" +
-          " favorites for easier access in the future. " +
-        "</p>" +
-      "</div>",
-    );
+      "<p class='favorite-exercises-empty-text'>" +
+      "It appears that you haven't added any exercises to your favorites" +
+      ' yet. To get started, you can add exercises that you like to your' +
+      ' favorites for easier access in the future. ' +
+      '</p>' +
+      '</div>';
 
     return;
   }
@@ -52,5 +49,3 @@ export const initialFavoriteList = () => {
     }
   );
 };
-
-initialFavoriteList();
