@@ -7,7 +7,7 @@ import { refs } from '../refs';
 
 const PER_PAGE = 10;
 
-const initialFavoriteList = () => {
+export const initialFavoriteList = () => {
   const favoriteExercises = favoritesStorage.getAll();
 
   const currentPage = favoritesFiltersService.getPage();

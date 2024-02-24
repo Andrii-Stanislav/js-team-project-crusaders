@@ -16,9 +16,9 @@ export default function createExercisesMarkup(data, isFavorite) {
         <div class="exercise-custom-block">
         ${
           isFavorite
-            ? `<button class="exercise-button-delete">
-              <svg class="trash-icon">
-                <use href="images/svg/icons.svg#icon-trash"></use>
+            ? `<button class="exercise-button-delete js-button-favorites-delete" data-id="${_id}">
+              <svg class="trash-icon js-button-favorites-delete" data-id="${_id}">
+                <use class="js-button-favorites-delete" href="images/svg/icons.svg#icon-trash" data-id="${_id}"></use>
               </svg>
             </button>`
             : `<p class="exercise-rating">
