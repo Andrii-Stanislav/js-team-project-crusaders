@@ -1,5 +1,3 @@
-import Pagination from 'tui-pagination';
-
 import { fetchFilters } from '../api/fetch-filters';
 import { filtersService } from '../storage/filters';
 import { refs } from '../refs';
@@ -9,10 +7,8 @@ import { addPagination } from '../helper/add-pagination.js';
 const initPage = filtersService.exercisesFiltersTable.getPage();
 const initFilter = filtersService.exercisesFilters.get();
 
-// initial fetch and setup pagination
 getInitFiltersExercises({ page: initPage, filter: initFilter });
 
-// set initFilter;
 refs.exercisesFiltersTabsList.forEach(elem => {
   const textContent = elem.textContent.trim();
   if (textContent === initFilter) {

@@ -1,3 +1,34 @@
-.qwe {
-  /*  */
+.favorite-exercises-empty-text-container {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.favorite-exercises-empty-text {
+  width: 318px;
+  color: var(--primary-dark);
+  text-align: center;
+  font-size: 14px;
+  font-weight: var(--font-weight-reg);
+  line-height: 1.24;
+}
+
+@media screen and (min-width: 768px) {
+  .favorite-exercises-empty-text-container {
+    margin-top: 132px;
+  }
+
+  .favorite-exercises-empty-text {
+    width: 554px;
+    font-size: 18px;
+    line-height: 1.33;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .favorite-exercises-empty-text-container {
+    margin-top: 148px;
+  }
 }
