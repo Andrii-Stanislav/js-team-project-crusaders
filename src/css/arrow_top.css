@@ -1,0 +1,18 @@
+#returnToTop {
+  display: none;
+  position: fixed;
+  bottom: 32px;
+  right: 30px;
+  background-color: var(--primary-dark);
+  border: 1px solid var(--bg-color);
+  cursor: pointer;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.arrow-top {
+  fill: var(--bg-color);
+}
