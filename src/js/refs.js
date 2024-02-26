@@ -30,4 +30,6 @@ export const refs = {
   footerSubscribeForm: document.querySelector('.js-footer-newsletter-form'),
   // header
   listItems: document.querySelectorAll('.nav-list-item'),
+  // button to top
+  returnToTop: document.getElementById('returnToTop'),
 };
