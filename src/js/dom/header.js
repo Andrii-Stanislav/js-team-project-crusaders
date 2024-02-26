@@ -6,7 +6,7 @@ const defaultPageName = 'home';
 refs.listItems.forEach((item) => {
   const link = item.querySelector('a');
 
-  if (!currentUrl.pathname
+  if ((!currentUrl.pathname || currentUrl.pathname === '/')
     && link.textContent.toLocaleLowerCase() === defaultPageName) {
     item.classList.add('nav-selected');
 
