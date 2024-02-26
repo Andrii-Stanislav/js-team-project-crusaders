@@ -1,4 +1,5 @@
 import { refs } from '../refs';
+import { overlay } from './overlay.js';
 
 export default class Loader {
   static #instance;
@@ -6,7 +7,7 @@ export default class Loader {
   #isShow = false;
 
   constructor() {
-    this.#loader = refs.loaderContainer;
+    this.#loader = refs.loader;
   }
 
   static init() {
@@ -22,6 +23,7 @@ export default class Loader {
 
     Loader.#instance.#isShow = true;
     Loader.#instance.#loader.classList.remove('visually-hidden');
+    overlay.show();
   }
 
   static hide() {
@@ -31,5 +33,6 @@ export default class Loader {
 
     Loader.#instance.#isShow = false;
     Loader.#instance.#loader.classList.add('visually-hidden');
+    overlay.hide();
   }
 }

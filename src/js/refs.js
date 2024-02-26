@@ -37,7 +37,8 @@ export const refs = {
   // button to top
   returnToTop: document.getElementById('returnToTop'),
   // loader
-  loaderContainer: document.querySelector('.loader-container'),
+  loader: document.querySelector('.loader'),
+  overlay: document.querySelector('.overlay'),
 
   modalDialog: document.getElementById('modalDialog'),
   closeModalBtn: document.querySelector('.button-close'),
