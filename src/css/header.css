@@ -62,11 +62,6 @@
   color: var(--primary-dark);
 }
 
-.nav-link:hover,
-.nav-link:focus {
-  color: #747bff;
-}
-
 @media screen and (max-width: 767.98px) {
   .header-networks {
     display: none;
