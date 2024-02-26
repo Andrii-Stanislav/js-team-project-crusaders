@@ -14,3 +14,4 @@ import './js/events/clickOnFilterCard';
 import './js/events/initial-exercise-list';
 import './js/events/open-exercises-modal';
 import './js/events/init-search';
+import './js/events/button-ToTop';

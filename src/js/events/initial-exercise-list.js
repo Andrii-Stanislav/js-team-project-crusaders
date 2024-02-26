@@ -6,13 +6,14 @@ import { getExercisesByKeyword } from '../api/get-exercises-by-keyword';
 import renderExercisesList from '../dom/render-exercises-list';
 import addText from '../helper/add-text';
 import { addPagination } from '../helper/add-pagination.js';
+import { FiltersEnum } from '../constants';
 
 export default async function initialExercisesList() {
   let filter = filtersService.exercisesFilters.get();
   let group = filtersService.exercisesGroups.get();
 
   filter = filter.toLowerCase().split(' ').join('');
-  if (filter === 'bodyparts') {
+  if (filter === FiltersEnum.BODY_PARTS) {
     filter = filter.slice(0, -1);
   }
   group = group.toLowerCase();

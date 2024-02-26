@@ -144,6 +144,7 @@ function createModalExercisesMarkup(cardData, isFavorite) {
 }
 
 export const handleClickFavoritesBtn = cardData => {
+  // We have to find this element here because it is not in DOM and rendered with JS
   const favoriteButton = document.querySelector(
     '.modal-exercises__button-favourites'
   );
