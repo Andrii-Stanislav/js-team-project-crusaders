@@ -19,7 +19,7 @@ export const addPagination = (
     template: {
       page: '<a href="#" class="pagination-page">{{page}}</a>',
       currentPage: '<div class="pagination-current-page-container">' +
-        '<a class="pagination-page pagination-current-page">{{page}}</a>' +
+        '<a href="#" class="pagination-page pagination-current-page">{{page}}</a>' +
         '</div>',
       moveButton: '<a href="#" class="visually-hidden"></a>',
       disabledMoveButton: '<a href="#" class="visually-hidden"></a>',
