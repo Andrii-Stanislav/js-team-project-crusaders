@@ -9,7 +9,7 @@
   border-radius: 50%;
   display: block;
   margin:15px auto;
-  color: var(--color-white);
+  color: var(--bg-color);
   box-sizing: border-box;
   animation: animloader 2s linear infinite;
 }
