@@ -25,6 +25,7 @@
 @import url('./loader.css');
 @import url('./pagination.css');
 @import url('./arrow_top.css');
+@import url('./overlay.css');
 
 :root {
   --clear-white: #ffffff;
