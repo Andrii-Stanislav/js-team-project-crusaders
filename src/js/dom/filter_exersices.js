@@ -21,14 +21,14 @@ function getInitFiltersExercises({ page, filter }) {
     ({ data: { results, page, perPage, totalPages } }) => {
       addPagination(
         'exercises-filters-pagination',
-        {page, perPage, totalPages},
+        { page, perPage, totalPages },
         newPage => {
-            const currentFilter = filtersService.exercisesFilters.get();
+          const currentFilter = filtersService.exercisesFilters.get();
 
-            getFiltersExercisesForNewPage(currentFilter, newPage);
-            filtersService.exercisesFiltersTable.setPage(newPage);
-          },
-        );
+          getFiltersExercisesForNewPage(currentFilter, newPage);
+          filtersService.exercisesFiltersTable.setPage(newPage);
+        }
+      );
 
       displayExercises(results);
     }
@@ -52,7 +52,7 @@ function displayExercises(results) {
 
       return `
   <li class="filters__item" ${dataFilter} ${dataGroupName}>
-    <img class="filters__img-first" src="${imgURL}"  ${dataFilter} ${dataGroupName}></img>
+    <img class="filters__img-first" src="${imgURL}" alt="${filter} - ${name}"  ${dataFilter} ${dataGroupName}></img>
     <div class="filters__wrapper-first" ${dataFilter}${dataGroupName}>
     <h2 class="filters__title-first" ${dataFilter} ${dataGroupName}>${name}</h2>
     <p class="filters__text-first" ${dataFilter} ${dataGroupName}>${filter}</p>

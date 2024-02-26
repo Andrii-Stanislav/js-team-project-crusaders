@@ -1,10 +1,12 @@
+import { refs } from '../refs';
+
 export default class Loader {
   static #instance;
   #loader;
   #isShow = false;
 
   constructor() {
-    this.#loader = document.querySelector('.loader-container');
+    this.#loader = refs.loaderContainer;
   }
 
   static init() {

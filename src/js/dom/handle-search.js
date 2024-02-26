@@ -1,5 +1,6 @@
 import { filtersService } from '../storage/filters';
 import initialExerciseList from '../events/initial-exercise-list';
+import { FiltersEnum } from '../constants';
 
 export default async function handleSearchSubmit(element) {
   // Prevent page reload
@@ -9,7 +10,7 @@ export default async function handleSearchSubmit(element) {
   let group = filtersService.exercisesGroups.get().toLowerCase();
 
   filter = filter.toLowerCase().split(' ').join('');
-  if (filter === 'bodyparts') {
+  if (filter === FiltersEnum.BODY_PARTS) {
     filter = filter.slice(0, -1);
   }
   group = group.toLowerCase();

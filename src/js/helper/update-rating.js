@@ -1,4 +1,6 @@
 export function updateRatingStar(value) {
+  // We have to find those elements here because it is not in DOM and rendered with JS
+
   const stars = document.querySelectorAll(
     '#rating .modal-exercises__rating-star'
   );

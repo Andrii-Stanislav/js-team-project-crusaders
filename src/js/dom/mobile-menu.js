@@ -1,17 +1,15 @@
-(() => {
-  const openMenuBtn = document.querySelector('[data-menu-open]');
-  const closeModalBtn = document.querySelector('[data-menu-close]');
-  const mobileMenuRef = document.querySelector('[data-menu-backdrop]');
+import { refs } from '../refs';
 
-  openMenuBtn.addEventListener('click', toggleModal);
-  closeModalBtn.addEventListener('click', toggleModal);
-  mobileMenuRef.addEventListener('click', clickBackdrop);
+(() => {
+  refs.openMobileMenuBtn.addEventListener('click', toggleModal);
+  refs.closeMobileModalBtn.addEventListener('click', toggleModal);
+  refs.mobileMenuRef.addEventListener('click', clickBackdrop);
 
   function clickBackdrop(event) {
     event.target === event.currentTarget && toggleModal();
   }
 
   function toggleModal() {
-    mobileMenuRef.classList.toggle('is-open-mobile-menu');
+    refs.mobileMenuRef.classList.toggle('is-open-mobile-menu');
   }
 })();

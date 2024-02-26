@@ -1,3 +1,5 @@
+import { refs } from '../refs';
+
 export default class Modal {
   #contentEventListeners;
   #onCloseCallback;
@@ -6,9 +8,9 @@ export default class Modal {
   #modalContent;
 
   constructor() {
-    this.#modal = document.getElementById('modalDialog');
-    this.#closeBtn = document.querySelector('.button-close');
-    this.#modalContent = document.getElementById('modal-content');
+    this.#modal = refs.modalDialog;
+    this.#closeBtn = refs.closeModalBtn;
+    this.#modalContent = refs.modalContent;
 
     this.#contentEventListeners = [];
     this.#onCloseCallback = [];
@@ -40,8 +42,8 @@ export default class Modal {
     this.#contentEventListeners.forEach(({ type, lister }) =>
       this.#modalContent.removeEventListener(type, lister)
     );
-    
-    if (executeCallback ) {
+
+    if (executeCallback) {
       this.#onCloseCallback.forEach(callback => callback());
     }
 

@@ -1,5 +1,9 @@
 export const refs = {
   body: document.querySelector('body'),
+  // heder-mobile-menu
+  openMobileMenuBtn: document.querySelector('[data-menu-open]'),
+  closeMobileModalBtn: document.querySelector('[data-menu-close]'),
+  mobileMenuRef: document.querySelector('[data-menu-backdrop]'),
   // quote
   quoteElement: document.querySelector('.quote-text'),
   authorElement: document.querySelector('.quote-author'),
@@ -32,4 +36,10 @@ export const refs = {
   listItems: document.querySelectorAll('.nav-list-item'),
   // button to top
   returnToTop: document.getElementById('returnToTop'),
+  // loader
+  loaderContainer: document.querySelector('.loader-container'),
+
+  modalDialog: document.getElementById('modalDialog'),
+  closeModalBtn: document.querySelector('.button-close'),
+  modalContent: document.getElementById('modal-content'),
 };
