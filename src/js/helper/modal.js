@@ -1,4 +1,5 @@
 import { refs } from '../refs';
+import { overlay } from './overlay.js';
 
 export default class Modal {
   #contentEventListeners;
@@ -33,6 +34,7 @@ export default class Modal {
     this.#closeBtn.addEventListener('click', this.handleCloseButtonClick);
     this.#modal.addEventListener('click', this.handleModalClick);
     this.#modal.showModal();
+    overlay.show();
   }
 
   close(executeCallback = true) {
@@ -48,6 +50,7 @@ export default class Modal {
     }
 
     this.#modal.close();
+    overlay.hide();
   }
 
   setContent(content) {
